@@ -1,0 +1,26 @@
+.layout {
+
+  &__content {
+    min-height: 50vh;
+
+    &-main {
+    }
+  }
+
+  &__description {
+    padding: 3rem;
+
+    &-header {
+      padding: 0 1rem;
+      margin-bottom: 2rem;
+      #border.solid(bottom, 4px, @color-01);
+    }
+  }
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 220px 1fr 400px;
+}
+
+

@@ -1,0 +1,63 @@
+.form-examples {
+  width: 100%;
+  
+  @media @tablet-small-min {
+    width: 80%;
+  }
+  
+  input {
+    margin-bottom: 1rem;
+  }
+  
+  &--container {
+    margin: 2rem 0;
+    
+    input {
+      margin-top: .3rem;
+    }
+  }
+  
+  &--label {
+    #label.default();
+    
+    &---bold {
+      #label.default(bold, 18px);
+    }
+    
+    input {
+      margin-top: .3rem;
+    }
+  }
+
+  &--input {
+    
+    &---01 {
+      #input.default();
+    }
+    
+    &---02 {
+      #input.custom(black, white, 10px, @gray-dark, 90%, 40px, 18px);
+    }
+    
+    &---03 {
+      #input.default(rounded);
+    }
+    
+    &---04 {
+      #input.default(dark);
+    }
+    
+    &---05 {
+      #input.default(dark-rounded);
+    }
+  }
+  
+  &--textarea {
+    #textarea.default();
+  }
+  
+  &--select {
+    #select.default();
+  }
+}
+

@@ -1,0 +1,31 @@
+// Global Import:
+@import '../../node_modules/less-style-library/imports.less';
+
+// Import Google fonts
+// Must specify .css or webpack throws an error and can't resolve the import.
+@import (css) url('https://fonts.googleapis.com/css?family=@{primary-font}');
+
+// LESS is a Declarative Language, which means we can import variables
+// anywhere, they don't have to be declared at the top.
+// variables.less will be available in all files imported from this file.
+
+@import 'variables';
+
+// All default styling & browser reset
+@import 'base';
+
+// Import components
+// @import '../components/*/*.less';
+
+@import '../components/header/header.less';
+@import '../components/layout/layout.less';
+@import '../components/footer/footer.less';
+@import '../components/menu/menu.less';
+// @import './menuItems/*/*.less';
+
+@import 'mixin-styles/border';
+
+// Mixins are all namespaced, and declared as functions
+// so that the styles don't print in the stylesheet unless they
+// are called. Call the functions like #namespace.mixin-name(@param-value);
+

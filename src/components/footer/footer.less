@@ -1,0 +1,28 @@
+footer {
+ // grid-area: footer;
+  display: flex;
+  background-color: darken(@color-01, 25%);
+  height: 200px;
+}
+
+.footer-content {
+  .footer-text-color();
+  width: 100%;
+  font-size: 1rem;
+  margin: 2rem auto;
+  text-align: center;
+  
+  a {
+    margin-left: 5px;
+    font-size: 1rem;
+    .footer-text-color();
+    
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.footer-text-color() {
+  color: lighten(@teal-light, 30%);
+}
