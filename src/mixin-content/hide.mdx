@@ -1,0 +1,31 @@
+---
+title: Hide
+slug: hide
+description: Mixins to easily hide elements with accessibilty in mind
+---
+
+import CodeBlock from '../components/codeBlock/codeBlock';
+
+Use the following mixins for image replacement or hiding text:
+
+<CodeBlock mixinName={`position`}>
+  #hide.text();
+</CodeBlock>
+
+If you want to maintain accessibilty you can specify it like this:
+
+<CodeBlock mixinName={`position`}>
+  #hide.text(accessible);
+</CodeBlock>
+
+If you want to hide a HTML element use the following mixin:
+
+<CodeBlock mixinName={`position`}>
+  #hide.element();
+</CodeBlock>
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+---
+title: Gradient
+slug: gradient
+description: Gradient mixins make it easy to write gradients in CSS
+---
+
+import CodeBlock from '../components/codeBlock/codeBlock';
+
+Gradient styles are based on the following naming pattern
+
+<CodeBlock mixinName={`gradient`}>
+  #gradient.gradient-type(position, first-color, last-color);
+</CodeBlock>
+
+Default: @color-01, @color-02, to bottom
+Default Linear Gradient (Bottom)
+
+<CodeBlock mixinName={`gradient`} number={`01`}>
+  #gradient.linear(); 
+</CodeBlock>
+
+
+Default Linear Gradient (Top)
+
+<CodeBlock mixinName={`gradient`} number={`02`}>
+  #gradient.linear(top); 
+</CodeBlock>
+
+Default Blue to Right Gradient
+
+<CodeBlock mixinName={`gradient`} number={`03`}>
+  #gradient.linear(right, @blue-light, @blue); 
+</CodeBlock>
+
+Default Orange to Left Gradient
+
+<CodeBlock mixinName={`gradient`} number={`04`}>
+  #gradient.linear(left, @orange, @orange-light);
+</CodeBlock>
+

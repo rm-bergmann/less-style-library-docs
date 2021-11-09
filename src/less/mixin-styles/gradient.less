@@ -1,0 +1,23 @@
+.gradient-example-div {
+  padding: 1rem;
+  color: white;
+  margin: 1rem 0;
+  height: 50px;
+  #border.radius();
+
+  &--01 {
+    #gradient.linear();
+  }
+  
+  &--02 {
+    #gradient.linear(top);
+  }
+  
+  &--03 {
+    #gradient.linear(right, green, lightgreen);
+  }
+  
+  &--04 {
+    #gradient.linear(left, violet, purple);
+  }
+}
