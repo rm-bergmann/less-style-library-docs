@@ -5,7 +5,7 @@ import { atomDark, a11yDark } from 'react-syntax-highlighter/dist/esm/styles/pri
 
 const CodeBlock = ({ mixinName, children, number }) => {
   const renderDiv = number ?
-    <div className={`${mixinName}-example-div ${mixinName}-example-div--${number}`} /> :
+    <div className={`${mixinName}-example ${mixinName}-example--${number}`} /> :
     null;
 
   return (
@@ -18,6 +18,7 @@ const CodeBlock = ({ mixinName, children, number }) => {
           wrapLines
           wrapLongLines
           showLineNumbers
+          lineProps={{ style: { wordBreak: 'break-all', whiteSpace: 'pre-wrap' } }}
         >
           {children}
         </SyntaxHighlighter>
