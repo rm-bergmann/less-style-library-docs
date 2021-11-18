@@ -6,32 +6,44 @@ description: Mixins to style elements as shapes
 
 import CodeBlock from '../components/codeBlock/codeBlock';
 
-### Shapes currently supported:
+### Shapes follow the following pattern:
 
-* arrow
-* round
-* square
+<CodeBlock mixinName={`shape`}>
+  #shape.shape-type(direction, size, color);
+</CodeBlock>
 
-For arrow shapes, pass in the direction (up, down, left or right), size and color
+* Shape-type mixins currently supported are: **arrow**, **round** and **square**
+* Direction supports the following values (arrow shapes only) **up**, **down**, **left** or **right**
+* Size (width and height as 1 value) in px, em, rem etc
+* Color
 
 <div className="shape--container">
   <div className="shape--arrow---left" />
-  <div className="shape--arrow---up-cyan" />
-  <div className="shape--arrow---right-red" />
-  <div className="shape--arrow---down-purple" />
 </div>
 
 <CodeBlock mixinName={`shape`}>
   #shape.arrow(left, 50px, @color-01);
 </CodeBlock>
 
+<div className="shape--container">
+  <div className="shape--arrow---up-cyan" />
+</div>
+
 <CodeBlock mixinName={`shape`}>
   #shape.arrow(up, 50px, @cyan);
 </CodeBlock>
 
+<div className="shape--container">
+  <div className="shape--arrow---right-red" />
+</div>
+
 <CodeBlock mixinName={`shape`}>
   #shape.arrow(right, 50px, @red);
 </CodeBlock>
+
+<div className="shape--container">
+  <div className="shape--arrow---down-purple" />
+</div>
 
 <CodeBlock mixinName={`shape`}>
   #shape.arrow(down, 50px, @purple);
@@ -41,12 +53,15 @@ For round shapes you can pass in padding, width and height (as the same value) a
 
 <div className="shape--container">
   <div className="shape--round" />
-  <div className="shape--round---blue" />
 </div>
 
 <CodeBlock mixinName={`shape`}>
   #shape.round();
 </CodeBlock>
+
+<div className="shape--container">
+  <div className="shape--round---blue" />
+</div>
 
 <CodeBlock mixinName={`shape`}>
   #shape.round(1rem, 100px, @blue);

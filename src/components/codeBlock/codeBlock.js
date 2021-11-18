@@ -15,10 +15,7 @@ const CodeBlock = ({ mixinName, children, number }) => {
         <SyntaxHighlighter
           language="css"
           style={atomDark}
-          wrapLines
-          wrapLongLines
           showLineNumbers
-          lineProps={{ style: { wordBreak: 'break-all', whiteSpace: 'pre-wrap' } }}
         >
           {children}
         </SyntaxHighlighter>

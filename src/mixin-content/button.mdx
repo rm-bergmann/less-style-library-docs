@@ -1,0 +1,124 @@
+---
+title: Button
+slug: button
+description: Mixins for basic button styles 
+---
+
+import CodeBlock from '../components/codeBlock/codeBlock';
+
+Button mixins currently supported are:
+
+* flat / flat - rounded
+* custom
+* link
+
+<CodeBlock mixinName={`shape`}>
+  #button.flat();
+</CodeBlock>
+
+By default the background colour is set to the @color-01 variable which is currently set to @teal in this app. 
+Target the element you want to style and call the mixin.
+By default, @color-01 is set to @blue.
+
+<div className="button">
+  <button type="button" className="button--button-01">
+    Button 01
+  </button>
+</div>
+
+<CodeBlock mixinName={`shape`}>
+  #button.flat();
+</CodeBlock>
+
+<div className="button">
+  <button type="button" className="buttons--button-01 button--button-01---green">
+    Button 01
+  </button>
+</div>
+
+<CodeBlock mixinName={`shape`}>
+  #button.flat(@green);
+</CodeBlock>
+
+<div className="button">
+  <button type="button" className="button--button-02">
+    Button 02
+  </button>
+</div>
+
+<CodeBlock mixinName={`shape`}>
+  #button.flat(rounded, @red);
+</CodeBlock>
+
+<div className="button">
+  <button type="button" className="buttons--button-02 button--button-02---red">
+    Button 02
+  </button>
+</div>
+
+<CodeBlock mixinName={`shape`}>
+  #button.flat(round, @purple);
+</CodeBlock>
+
+The custom button mixins allow you to fully customize a button style in 1 line of code.
+The following 5 paramaters are supported, and include the following default values.
+
+* background-color: @color;
+* color: white;
+* font-size: 1rem;
+* padding: 1rem;
+* border-radius: 0; 
+
+<div className="button">
+  <button type="button" className="button--button-03">
+    Button 03
+  </button>
+</div>
+
+<CodeBlock mixinName={`shape`}>
+  #button.custom(@teal, white, .8rem, 1.1rem, .4rem);
+</CodeBlock>
+
+<div className="button">
+  <button type="button" className="buttons--button-03 button--button-03---purple">
+    Button 03
+  </button>
+</div>
+
+<CodeBlock mixinName={`shape`}>
+  #button.custom(#c9c9c9, black, 20px, 16px, 10px);
+</CodeBlock>
+
+
+<div className="button">
+  <button type="button" className="button--button-04">
+    Button 04
+  </button>
+</div>
+
+<div className="button">
+  <button type="button" className="buttons--button-04 button--button-04---gray">
+    Button 04
+  </button>
+</div>
+
+<div className="button">
+  <a className="button--button-link" href="/">
+    I am a link
+  </a>
+</div>
+
+<CodeBlock mixinName={`shape`}>
+  #button.link();
+</CodeBlock>
+
+<div className="button">
+  <a className="buttons--button-link button--button-link---orange" href="/">
+    I am also a link
+  </a>
+</div>
+
+<CodeBlock mixinName={`shape`}>
+  #button.link(@orange, white, 10px, 14px, 4px);
+</CodeBlock>
+

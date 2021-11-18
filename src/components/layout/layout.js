@@ -7,7 +7,7 @@ import Footer from '../footer/footer'
 const Layout = ({ children }) => {
   return (
     <main className={`layout`}>
-      <Header appName={`{ Less Style Library }`} version={`3.1.0`} />
+      <Header appName={`#less.style-library()`} version={`3.1.0`} />
       <div className={`layout__content`}>
         {children}
       </div>
