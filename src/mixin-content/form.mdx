@@ -5,6 +5,7 @@ description: Improves default browser form input, label, select and textarea sty
 ---
 
 import CodeBlock from '../components/codeBlock/codeBlock';
+import FormSelect from '../components/formSelect/formSelect';
 
 <CodeBlock mixinName={`form`}>
   #form.form-element(options);
@@ -13,6 +14,112 @@ import CodeBlock from '../components/codeBlock/codeBlock';
 * Useful to use as a starting point when designing the element styles
 * Form elements currently supported are **label**, **input**, **select** and **textarea**
 * Options may vary depending on the form element
+
+---
+
+## Label
+
+Browser default label:
+
+<div className="form-container">
+  <label>Default Label Style</label>
+</div>
+
+Label Mixin Style:
+
+<CodeBlock mixinName={`form`}>
+  #form.label();
+</CodeBlock>
+
+<div className="form-container">
+  <label className="form-examples--label" htmlFor="text-input">
+    Form Label
+  </label>
+</div>
+
+
+
+
+<CodeBlock mixinName={`form`}>
+  #form.input();
+</CodeBlock>
+
+<div className="form-container">
+  <input
+    className="form-examples--input form-examples--input---01"
+    placeholder="Enter Text"
+  />
+</div>
+
+<CodeBlock mixinName={`form`}>
+  #input.default(rounded);
+</CodeBlock>
+
+<CodeBlock mixinName={`form`}>
+  #input.default(dark);
+</CodeBlock>
+
+<CodeBlock mixinName={`form`}>
+  #input.default(dark-rounded);
+</CodeBlock>
+
+
+<div className="form-container">
+  <label className="form-examples--label---bold" htmlFor="text-input-02">
+    Form Label
+    <input
+      className="form-examples--input form-examples--input-02"
+      id="text-input-02"
+      placeholder="Enter Text"
+    />
+  </label>
+</div>
+
+<div className="form-container">
+  <input
+    className="form-examples--input form-examples--input-03"
+    placeholder="Enter Text"
+  />
+</div>
+
+<div className="form-container">
+  <input
+    className="form-examples--input form-examples--input-04"
+    placeholder="Enter Text"
+  />
+</div>
+
+<div className="form-container">
+  <input
+    className="form-examples--input form-examples--input-05"
+    placeholder="Enter Text"
+  />
+</div>
+
+---
+
+## Select
+
+Browser default select:
+
+<FormSelect />
+
+Select Element default style:
+
+<FormSelect selectClassName="form-select--default" />
+
+<CodeBlock mixinName={`form`}>
+  #form.select();
+</CodeBlock>
+      
+
+### Select Element style with radius:
+
+<FormSelect selectClassName="form-select--rounded" />
+
+<CodeBlock mixinName={`form`}>
+  #form.select(rounded);
+</CodeBlock>
 
 ---
 

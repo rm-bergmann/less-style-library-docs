@@ -3,36 +3,39 @@
   
   &-container {
     margin: 2rem 0;
-    
-    input {
-      margin-top: .3rem;
-    }
   }
   
-  &--label {
+  &-label {
     #form.label();
-    
-    input {
-      margin-top: .3rem;
-    }
   }
 
-  &--input {
+  &-input {
     
-    &---01 {
+    &-01 {
       #form.input();
     }
        
-    &---03 {
+    &-03 {
       #form.input(rounded);
     }
     
-    &---04 {
+    &-04 {
       #form.input(dark);
     }
     
-    &---05 {
+    &-05 {
       #form.input(dark-rounded);
+    }
+  }
+
+  &-select {
+
+    &--default {
+      #form.select();
+    }
+
+    &--rounded {
+      #form.select(rounded);
     }
   }
   
@@ -40,8 +43,5 @@
     #form.textarea();
   }
   
-  &-select {
-    #form.select();
-  }
 }
 
