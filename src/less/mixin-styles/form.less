@@ -1,0 +1,47 @@
+.form {
+  width: 100%;
+  
+  &-container {
+    margin: 2rem 0;
+    
+    input {
+      margin-top: .3rem;
+    }
+  }
+  
+  &--label {
+    #form.label();
+    
+    input {
+      margin-top: .3rem;
+    }
+  }
+
+  &--input {
+    
+    &---01 {
+      #form.input();
+    }
+       
+    &---03 {
+      #form.input(rounded);
+    }
+    
+    &---04 {
+      #form.input(dark);
+    }
+    
+    &---05 {
+      #form.input(dark-rounded);
+    }
+  }
+  
+  &-textarea {
+    #form.textarea();
+  }
+  
+  &-select {
+    #form.select();
+  }
+}
+

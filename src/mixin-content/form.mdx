@@ -1,0 +1,33 @@
+---
+title: Form
+slug: form
+description: Improves default browser form input, label, select and textarea styles
+---
+
+import CodeBlock from '../components/codeBlock/codeBlock';
+
+<CodeBlock mixinName={`form`}>
+  #form.form-element(options);
+</CodeBlock>
+
+* Useful to use as a starting point when designing the element styles
+* Form elements currently supported are **label**, **input**, **select** and **textarea**
+* Options may vary depending on the form element
+
+---
+
+## Textarea
+
+Browser default textarea styles are plain and unatractive:
+
+<textarea  />
+
+Using the mixin below, you can instatly size it so it's more visible
+
+<CodeBlock mixinName={`form`}>
+  #form.textarea();
+</CodeBlock>
+
+<div className="form-container">
+  <textarea className="form-textarea" />
+</div>
