@@ -45,12 +45,14 @@ class Color extends Component {
       const colorClassName = `${blockClassName}---${color}`;
 
       return (
-        <div
-          key={color}
-          className={`${baseClassName}--wrapper ${baseClassName}--wrapper---${color}`}
-        >
-          <p className={`${baseClassName}--title`}>{`@${color}`}</p>
-          <div className={`${blockClassName} ${colorClassName}`} />
+        <div className="content content-colors">
+          <div
+            key={color}
+            className={`${baseClassName}--wrapper ${baseClassName}--wrapper---${color}`}
+          >
+            <p className={`${baseClassName}--title`}>{`@${color}`}</p>
+            <div className={`${blockClassName} ${colorClassName}`} />
+          </div>
         </div>
       );
     });

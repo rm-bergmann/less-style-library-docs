@@ -32,7 +32,7 @@ const MixinsPage = ({ data }) => {
 
   return (
     <div className={`content-wrapper`}>
-      <Menu menuType={`mixins`} menuItems={mixinLinks} />
+      <Menu menuType={`sub`} menuItems={mixinLinks} />
       <section className={`layout__description`}>
         <h1>Mixins</h1>
         <p>Mixins are designed to make it easy to write groups of CSS rules in 1 line of code.</p>

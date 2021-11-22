@@ -51,7 +51,14 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "mixins",
-        path: "./src/mixin-content",
+        path: "./src/categories/mixins",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "variables",
+        path: "./src/categories/variables",
       },
     },
   ],

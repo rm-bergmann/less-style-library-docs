@@ -1,0 +1,106 @@
+---
+title: Breakpoints
+slug: breakpoints
+category: variables
+description: Preset breakpoint variables variables
+---
+
+import CodeBlock from '../../components/codeBlock/codeBlock';
+
+Common device screen sizes are set up as variables to make it easier and
+faster to write media queries. The variables follow a specific pattern
+to make the variables easy to remember.
+
+Breakpoint variables are constructed based on teh following pattern:
+
+<CodeBlock mixinName={`breakpoints`}>
+  @media @[device]-[size]-[min/max]
+</CodeBlock>
+
+<CodeBlock mixinName={`breakpoints`}>
+  @media @mobile-small-max
+</CodeBlock>
+
+<CodeBlock mixinName={`breakpoints`}>
+  @media @desktop-large-min
+</CodeBlock>
+
+
+## Device Options:
+* mobile
+* tablet
+* laptop
+* desktop
+   
+## Size Options
+* small
+* large
+
+To target mobile devices with a screensize less than 320px wide you can
+write the following:
+
+
+## Complete list of defined media query variables:
+
+<div className="flex-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Max Width Variable</th>
+        <th>Screen Width PX</th>
+        <th>Min Width Variable</th>
+        <th>Screen Width PX</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>@mobile-small-max</td>
+        <td>319px</td>
+        <td>@mobile-small-min</td>
+        <td>320px</td>
+      </tr>
+      <tr>
+        <td>@mobile-large-max</td>
+        <td>479px</td>
+        <td>@mobile-large-min</td>
+        <td>480px</td>
+      </tr>
+      <tr>
+        <td>@tablet-small-max</td>
+        <td>599px</td>
+        <td>@tablet-small-min</td>
+        <td>600px</td>
+      </tr>
+      <tr>
+        <td>@tablet-large-max</td>
+        <td>767px</td>
+        <td>@tablet-large-min</td>
+        <td>768px</td>
+      </tr>
+      <tr>
+        <td>@laptop-small-max</td>
+        <td>991px</td>
+        <td>@laptop-small-min</td>
+        <td>992px</td>
+      </tr>
+      <tr>
+        <td>@laptop-large-max</td>
+        <td>1279px</td>
+        <td>@laptop-large-min</td>
+        <td>1280px</td>
+      </tr>
+      <tr>
+        <td>@desktop-small-max</td>
+        <td>1599px</td>
+        <td>@desktop-small-min</td>
+        <td>1600px</td>
+      </tr>
+      <tr>
+        <td>@desktop-large-max</td>
+        <td>1919px</td>
+        <td>@desktop-large-min</td>
+        <td>1920px</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
