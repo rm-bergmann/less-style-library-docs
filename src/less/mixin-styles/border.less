@@ -1,6 +1,6 @@
 .border-example {
   #display.dimensions(200px, 40px);
-  background-color: lighten(@gray-light, 25%);
+  background-color: lighten(@theme-colors[graylight], 25%);
 
   &--01 {
     #border.solid();
@@ -28,31 +28,31 @@
   
   &--07 {
     #border.radius();
-    background-color: @gray-light;
+    background-color: @theme-colors[graylight];
   }
   
   &--08 {
     #border.radius(20px);
-    background-color: @gray-light;
+    background-color: @theme-colors[graylight];
   }
   
   &--09 {
     #border.radius(top);
-    background-color: @gray-light;
+    background-color: @theme-colors[graylight];
   }
   
   &--10 {
     #border.radius(bottom, 8px);
-    background-color: @gray-light;
+    background-color: @theme-colors[graylight];
   }
   
   &--11 {
     #border.radius(left, 10px);
-    background-color: @gray-light;
+    background-color: @theme-colors[graylight];
   }
 
   &--12 {
     #border.radius(right, 50px);
-    background-color: @gray-light;
+    background-color: @theme-colors[graylight];
   }
 }

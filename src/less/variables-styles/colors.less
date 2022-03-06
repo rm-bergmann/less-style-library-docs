@@ -1,4 +1,4 @@
-.content-colors {
+.colors {
   #display.grid(6, 0, auto, 0);
 
   &--header {
@@ -13,53 +13,69 @@
   }
 
   &--block {
-    #shape.square(75px);
+    #shape.square(100px);
   }
 }
 
-.generate-selector(blue, @blue);
-.generate-selector(blue-light, @blue-light);
-.generate-selector(blue-dark, @blue-dark);
+.generate-selector(white, @white[01]);
+.generate-selector(gray-light, @gray-light[01]);
+.generate-selector(gray, @gray[01]);
+.generate-selector(gray-dark, @gray-dark[01]);
+.generate-selector(black, @black[01]);
 
-.generate-selector(green, @green);
-.generate-selector(green-light, @green-light);
-.generate-selector(green-dark, @green-dark);
 
-.generate-selector(red, @red);
-.generate-selector(red-light, @red-light);
-.generate-selector(red-dark, @red-dark);
+.generate-selector(pink-pale, @pink-pale[01]);
+.generate-selector(pink-light, @pink-light[01]);
+.generate-selector(pink, @pink[01]);
+.generate-selector(pink-dark, @pink-dark[01]);
 
-.generate-selector(purple, @purple);
-.generate-selector(purple-light, @purple-light);
-.generate-selector(purple-dark, @purple-dark);
 
-.generate-selector(teal, @teal);
-.generate-selector(teal-light, @teal-light);
-.generate-selector(teal-dark, @teal-dark);
+.generate-selector(purple-pale, @purple-pale[01]);
+.generate-selector(purple, @purple[01]);
+.generate-selector(purple-deep, @purple-deep[01]);
+.generate-selector(indigo, @indigo[01]);
 
-.generate-selector(yellow, @yellow);
-.generate-selector(yellow-light, @yellow-light);
-.generate-selector(yellow-dark, @yellow-dark);
+.generate-selector(red-pale, @red-pale[01]);
+.generate-selector(red-light, @red-light[01]);
+.generate-selector(red, @red[01]);
+.generate-selector(red-dark, @red-dark[01]);
 
-.generate-selector(orange, @orange);
-.generate-selector(orange-light, @orange-light);
-.generate-selector(orange-dark, @orange-dark);
+.generate-selector(orange-pale, @orange-pale[01]);
+.generate-selector(orange-light, @orange-light[01]);
+.generate-selector(orange, @orange[01]);
+.generate-selector(orange-deep, @orange-deep[01]);
+.generate-selector(peach, @peach[01]);
 
-.generate-selector(gray, @gray);
-.generate-selector(gray-light, @gray-light);
-.generate-selector(gray-dark, @gray-dark);
+.generate-selector(yellow-pale, @yellow-pale[01]);
+.generate-selector(yellow, @yellow[01]);
+.generate-selector(amber, @amber[01]);
+.generate-selector(khaki, @khaki[01]);
 
-.generate-selector(pink, @pink);
-.generate-selector(pink-light, @pink-light);
-.generate-selector(pink-dark, @pink-dark);
+.generate-selector(green-pale, @green-pale[01]);
+.generate-selector(green-light, @green-light[01]);
+.generate-selector(green, @green[01]);
+.generate-selector(green-gray, @green-gray[01]);
+.generate-selector(green-dark, @green-dark[01]);
+.generate-selector(lime, @lime[01]);
+.generate-selector(olive, @olive[01]);
 
-.generate-selector(cyan, @cyan);
-.generate-selector(cyan-light, @cyan-light);
-.generate-selector(cyan-dark, @cyan-dark);
+.generate-selector(teal, @teal[01]);
+.generate-selector(teal-dark, @teal-dark[01]);
+.generate-selector(aqua, @aqua[01]);
+.generate-selector(cyan, @cyan[01]);
+
+.generate-selector(blue, @blue[01]);
+.generate-selector(blue-pale, @blue-pale[01]);
+.generate-selector(blue-light, @blue-light[01]);
+.generate-selector(blue-dark, @blue-dark[01]);
+.generate-selector(blue-gray, @blue-gray[01]);
+
+.generate-selector(brown, @brown[01]);
+.generate-selector(maroon, @maroon[01]);
 
 .generate-selector(@color: black, @var: @color) {
 
-  .content-colors {
+  .colors {
 
     &--wrapper---@{color} {
       color: @var;

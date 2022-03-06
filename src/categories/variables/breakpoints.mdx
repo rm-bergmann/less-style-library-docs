@@ -17,15 +17,6 @@ Breakpoint variables are constructed based on teh following pattern:
   @media @[device]-[size]-[min/max]
 </CodeBlock>
 
-<CodeBlock mixinName={`breakpoints`}>
-  @media @mobile-small-max
-</CodeBlock>
-
-<CodeBlock mixinName={`breakpoints`}>
-  @media @desktop-large-min
-</CodeBlock>
-
-
 ## Device Options:
 * mobile
 * tablet
@@ -35,6 +26,32 @@ Breakpoint variables are constructed based on teh following pattern:
 ## Size Options
 * small
 * large
+
+### Examples:
+
+For example, you can write media queries using these variables. To target a screen width of 319px and below: 
+
+<CodeBlock mixinName={`breakpoints`}>
+  @media @mobile-small-max
+</CodeBlock>
+
+Which will output the following CSS:
+
+<CodeBlock mixinName={`breakpoints`}>
+  @media only screen and (max-width: 319px)
+</CodeBlock>
+
+Or target a viewport width of 1280px and above:  
+
+<CodeBlock mixinName={`breakpoints`}>
+  @media @desktop-large-min
+</CodeBlock>
+
+Which will output the following CSS:
+
+<CodeBlock mixinName={`breakpoints`}>
+  @media only screen and (min-width: 1280px)
+</CodeBlock>
 
 To target mobile devices with a screensize less than 320px wide you can
 write the following:

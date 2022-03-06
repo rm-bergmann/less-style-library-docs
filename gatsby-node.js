@@ -32,7 +32,8 @@ exports.onCreateWebpackConfig = ({
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  let subMenuLinks = {}
+  let mixinLinks = {};
+  let variablesLinks = {};
 
   const { data } = await graphql(`
     query getMixins {
@@ -54,26 +55,30 @@ exports.createPages = async ({ graphql, actions }) => {
     const { frontmatter } = node;
     const { category, slug, title } = frontmatter;
 
-    subMenuLinks[title] = {
-      "linkText": title,
-      "linkRoute": `/${category}/${slug}`,
-    }
+    switch (category) {
+      case 'mixins':
+        mixinLinks[title] = {
+          "linkText": title,
+          "linkRoute": `/${category}/${slug}`,
+        };
+        break;
+
+      case 'variables':
+        variablesLinks[title] = {
+          "linkText": title,
+          "linkRoute": `/${category}/${slug}`,
+        };
+        break;
+
+      default: ''
+    };
+
+
 
     createPage({
       path: `/${category}/${slug}`,
       component: require.resolve(`./src/templates/category.js`),
-      context: { node, subMenuLinks, category },
+      context: { node, mixinLinks, variablesLinks, category },
     })
   });
-
-  /*
-  variables.forEach(variable => {
-    createPage({
-      path: `/variables/${variable.name}`,
-      component: require.resolve(`./src/templates/variable.js`),
-      menuItem: variable.name,
-      context: { variable },
-    })
-  });
-  */
 }

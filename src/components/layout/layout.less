@@ -2,9 +2,9 @@
 
   &__content {
     min-height: 50vh;
-
-    &-main {
-    }
+    display: grid;
+    grid-template-columns: 240px 1fr 240px;
+    box-shadow: 2px 4px 2px lighten(@theme-colors[graylight], 10%);
   }
 
   &__description {
@@ -16,11 +16,12 @@
       #border.solid(bottom, 4px, @color-01);
     }
   }
+
+  &__side {
+    background-color: lighten(@color-02, 50%);
+    padding: 1rem;
+  }
 }
 
-.content-wrapper {
-  display: grid;
-  grid-template-columns: 220px 1fr 400px;
-}
 
 
