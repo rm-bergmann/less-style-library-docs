@@ -1,31 +1,16 @@
 ---
-title: Colors
-slug: colors
+title: Color Names
+slug: color-names
 category: variables
 description: Preset color name variables
 ---
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
 import Color from '../../components/color/color';
+import colors from '../../components/color/colors';
 
-CSS has a large [list of color variable names][1] already built in,
-but they are not easy to memorize unless you use them frequently.
-
-Less Style Library includes color variables in object format which 
-makes it easy to change shades of a particular color, which is useful
-when experimenting with different colour shades.
-
-The variable naming follows this pattern:
-
-<CodeBlock mixinName={`colors`}>
-  @colorname-colortype[shade-number]
-</CodeBlock>
-
-There is no specific order of shade numbers
-
-
-[1]: https://www.quackit.com/css/css_color_codes.cfm
+Available color variables to use in your color palletes
 
 <div className="colors">
-  <Color />
+  {colors.map(color => <Color colors={color} />)}
 </div>

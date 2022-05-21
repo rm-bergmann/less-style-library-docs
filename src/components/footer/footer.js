@@ -23,7 +23,6 @@ const Footer = () => {
             NPM Package
           </a>
         </p>
-        <p>Powered by Gatsby</p>
         <small>
           &copy;
           {` Copyright ${currentDate.getFullYear()} rickbergmann.com`}

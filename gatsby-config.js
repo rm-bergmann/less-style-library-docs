@@ -50,6 +50,13 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "documentation",
+        path: "./src/categories/documentation",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "mixins",
         path: "./src/categories/mixins",
       },

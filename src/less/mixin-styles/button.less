@@ -1,49 +1,49 @@
 .button {
-  
+
   a,
   button {
     margin-right: 1rem;
   }
-  
+
   &--button {
 
     &-01 {
       #button.flat();
-      
+
       &---green {
-        #button.flat(@green[04]);
+        #button.flat(@japanese-laurel);
       }
     }
 
     &-02 {
       #button.flat(rounded);
-      
+
       &---red {
-        #button.flat(rounded, @red[02]);
+        #button.flat(rounded, @paarl);
       }
     }
 
     &-03 {
       #button.flat(round);
-      
+
       &---purple {
-        #button.flat(round, @purple[06]);
+        #button.flat(round, @wine-berry);
       }
     }
-    
+
     &-04 {
-      #button.custom(@teal[02], white, .8rem, 1.1rem, .4rem);
-      
+      #button.custom(@eden, @white, .8rem, 1.1rem, .4rem);
+
       &---gray {
-        #button.custom(#c9c9c9, black, 20px, 16px, 10px);
+        #button.custom(@limed-ash, @black, 20px, 16px, 10px);
       }
     }
 
     &-link {
       #button.link();
-      
+
       &---orange {
-        #button.link(@orange[02], white, 10px, 14px, 4px);
+        #button.link(@orange-peel, @white, 10px, 14px, 4px);
       }
     }
   }

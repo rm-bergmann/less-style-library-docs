@@ -1,44 +1,63 @@
 import React from 'react';
-import CodeBlock from '../components/codeBlock/codeBlock';
+import { graphql } from 'gatsby';
+import Menu from '../components/menu/menu';
 import '../less/imports.less';
 
-const IndexPage = () => {
+export const query = graphql`
+  query getDefaultLinkData {
+    allMdx {
+      nodes {
+        frontmatter {
+          description
+          slug
+          title
+          category
+        }
+        id
+      }
+    }
+  }`;
+
+const IndexPage = ({ data }) => {
+
+  const allDocumentationLinks = data.allMdx.nodes;
+  let documentationLinks = {};
+
+  allDocumentationLinks.map(documentationLink => {
+    const { title, slug, category } = documentationLink.frontmatter;
+
+    if (category === 'documentation') {
+      documentationLinks[title] = {
+        "linkText": title,
+        "linkRoute": `/documentation/${slug}`,
+      }
+    }
+    return documentationLinks;
+  });
 
   return (
     <>
-      <div />
+      <Menu menuType={`sub`} menuItems={documentationLinks} />
       <div className={`about-container`}>
 
+        <h1>About Less Style Library</h1>
+
         <p>Less Style Library is a library of namespaced mixins to help write css styles faster.</p>
-        <p>This is a useful tool if:</p>
+
+        <p>This library also includes variables for colour names and media queries</p>
+
+        <h3>This is a useful tool if:</h3>
 
         <ul>
           <li>You like designing in the browser</li>
           <li>You like writing CSS in Less</li>
           <li>You like changing multiple values at once</li>
-          <li>You like identifying where styles are in your code easily</li>
+          <li>You like identifying where common style patterns are used in your code</li>
+          <li>You like minimizing the number of lines of css rules in your files</li>
+          <li>You like sharing mixins between projects</li>
         </ul>
 
-        <h2>Installation</h2>
-        <p>Install into your project using yarn or npm</p>
-
-        <CodeBlock>
-          $ npm install less-style-library --save-dev
-        </CodeBlock>
-
-        <CodeBlock>
-          $ yarn add less-style-library
-        </CodeBlock>
-
-        <p>
-          Import the library using a less / css import statement. This should be imported
-          before all other less files in your project so that you can override any predefined
-          variables and settings if needed.
-        </p>
-
-        <CodeBlock>
-          @import './node_modules/less-style-library/imports.less';
-        </CodeBlock>
+        <h3>Why is Less the chosen CSS preprocesser for this library?</h3>
 
       </div>
       <aside className={`layout__side`}>

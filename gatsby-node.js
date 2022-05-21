@@ -34,6 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   let mixinLinks = {};
   let variablesLinks = {};
+  let documentationLinks = {};
 
   const { data } = await graphql(`
     query getMixins {
@@ -70,15 +71,17 @@ exports.createPages = async ({ graphql, actions }) => {
         };
         break;
 
-      default: ''
+      default:
+        documentationLinks[title] = {
+          "linkText": title,
+          "linkRoute": `/${category}/${slug}`,
+        }
     };
-
-
 
     createPage({
       path: `/${category}/${slug}`,
       component: require.resolve(`./src/templates/category.js`),
-      context: { node, mixinLinks, variablesLinks, category },
+      context: { node, documentationLinks, mixinLinks, variablesLinks, category },
     })
   });
 }

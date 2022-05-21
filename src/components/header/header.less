@@ -1,6 +1,6 @@
 .header {
-  #gradient.linear(lighten(@color-01, 4%), @color-01);
-  padding: 2rem 0 1rem 0;
+  #gradient.linear(lighten(@color-01, 10%), @color-01);
+  padding: 1.5rem 0 1rem 0;
 
   &__logo {
     text-align: center;
@@ -15,17 +15,17 @@
       color: white;
     }
   }
-  
+
   &--mobile-menu {
     // #grid.column(span, 11, 2);
 
     .menu {
       display: none;
     }
-    
+
     svg {
       cursor: pointer;
-      
+
       @media @desktop-small-min {
         display: none;
       }

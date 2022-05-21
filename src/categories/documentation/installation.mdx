@@ -1,0 +1,26 @@
+---
+title: Installation
+slug: installation
+category: documentation
+description: Using this library in your app
+---
+
+import CodeBlock from '../../components/codeBlock/codeBlock';
+
+Install into your project using yarn or npm.
+
+<CodeBlock mixinName={`installation`}>
+  $ npm install less-style-library --save-dev
+</CodeBlock>
+
+<CodeBlock mixinName={`installation`}>
+  $ yarn add less-style-library
+</CodeBlock>
+
+Import the library using a less / css import statement. This should be imported
+before all other less files in your project so that you can override any predefined
+variables and settings if needed.
+
+<CodeBlock mixinName={`installation`}>
+  @import './node_modules/less-style-library/imports.less';
+</CodeBlock>

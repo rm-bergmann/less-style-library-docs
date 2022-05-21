@@ -1,88 +1,268 @@
 .colors {
-  #display.grid(6, 0, auto, 0);
+  #display.grid(3, 0, auto, 0);
+  gap: 10px 20px;
+  align-items: center;
 
   &--header {
     #grid.column(span, 3, 8);
   }
 
-  &--wrapper {
-
-    p {
-      font-weight: bold;
-    }
+  p {
+    font-size: .9rem;
   }
 
-  &--block {
-    #shape.square(100px);
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  &__block {
+    margin-bottom: 1rem;
+    border-radius: @settings[radius];
+    #display.dimensions(100%, 40px);
   }
 }
 
-.generate-selector(white, @white[01]);
-.generate-selector(gray-light, @gray-light[01]);
-.generate-selector(gray, @gray[01]);
-.generate-selector(gray-dark, @gray-dark[01]);
-.generate-selector(black, @black[01]);
+.generate-selector(white, @white);
+.generate-selector(black, @black);
+.generate-selector(seashell, @seashell);
+.generate-selector(mystic, @mystic);
+.generate-selector(wild-sand, @wild-sand);
+.generate-selector(gallery, @gallery);
+.generate-selector(alto, @alto);
+.generate-selector(quill-gray, @quill-gray);
+.generate-selector(silver-sand, @silver-sand);
+.generate-selector(silver, @silver);
+.generate-selector(silver-chalice, @silver-chalice);
+.generate-selector(silver-chalice-dark, @silver-chalice-dark);
+.generate-selector(jumbo, @jumbo);
+.generate-selector(limed-ash, @limed-ash);
+.generate-selector(gray, @gray);
+.generate-selector(dove-gray, @dove-gray);
+.generate-selector(scorpion, @scorpion);
+.generate-selector(soya-bean, @soya-bean);
+.generate-selector(slate-gray, @slate-gray);
+.generate-selector(storm-gray, @storm-gray);
+.generate-selector(tuna, @tuna);
+.generate-selector(lavendar-blush, @lavendar-blush);
+.generate-selector(cavern-pink, @cavern-pink);
+.generate-selector(vanilla-ice, @vanilla-ice);
+.generate-selector(pastel-pink, @pastel-pink);
+.generate-selector(pink, @pink);
+.generate-selector(carnation-pink, @carnation-pink);
+.generate-selector(hot-pink, @hot-pink);
+.generate-selector(charm, @charm);
+.generate-selector(cerise, @cerise);
+.generate-selector(lavendar, @lavendar);
+.generate-selector(persian-rose, @persian-rose);
+.generate-selector(amaranth, @amaranth);
+.generate-selector(red-violet, @red-violet);
+.generate-selector(plum, @plum);
+.generate-selector(razzle-dazzle-rose, @razzle-dazzle-rose);
+.generate-selector(pink-flamingo, @pink-flamingo);
+.generate-selector(moon-raker, @moon-raker);
+.generate-selector(thistle, @thistle);
+.generate-selector(cold-purple, @cold-purple);
+.generate-selector(light-orchid, @light-orchid);
+.generate-selector(orchid, @orchid);
+.generate-selector(lavendar-magenta, @lavendar-magenta);
+.generate-selector(magenta, @magenta);
+.generate-selector(amethyst, @amethyst);
+.generate-selector(royal-purple, @royal-purple);
+.generate-selector(purple-heart, @purple-heart);
+.generate-selector(electric-violet, @electric-violet);
+.generate-selector(blue-gem, @blue-gem);
+.generate-selector(flirt, @flirt);
+.generate-selector(fresh-eggplant, @fresh-eggplant);
+.generate-selector(purple-pizzazz, @purple-pizzazz);
+.generate-selector(violet-eggplant, @violet-eggplant);
+.generate-selector(seance, @seance);
+.generate-selector(daisy-bush, @daisy-bush);
+.generate-selector(medium-purple, @medium-purple);
+.generate-selector(portage, @portage);
+.generate-selector(blue-marguerite, @blue-marguerite);
+.generate-selector(gigas, @gigas);
+.generate-selector(eminence, @eminence);
+.generate-selector(pigment-indigo, @pigment-indigo);
+.generate-selector(scarlet-gum, @scarlet-gum);
+.generate-selector(martinique, @martinique);
+.generate-selector(blackcurrent, @blackcurrent);
+.generate-selector(fuchsia-blue, @fuchsia-blue);
+.generate-selector(thunder, @thunder);
+.generate-selector(cocoa-brown, @cocoa-brown);
+.generate-selector(wine-berry, @wine-berry);
+.generate-selector(indigo, @indigo);
+.generate-selector(violet, @violet);
+.generate-selector(pippin, @pippin);
+.generate-selector(peach-schnapps, @peach-schnapps);
+.generate-selector(quicksand, @quicksand);
+.generate-selector(vivid-tangerine, @vivid-tangerine);
+.generate-selector(salmon, @salmon);
+.generate-selector(froly, @froly);
+.generate-selector(chestnut-rose, @chestnut-rose);
+.generate-selector(pomegranate, @pomegranate);
+.generate-selector(red, @red);
+.generate-selector(mexican-red, @mexican-red);
+.generate-selector(roof-terracotta, @roof-terracotta);
+.generate-selector(crimson, @crimson);
+.generate-selector(red-berry, @red-berry);
+.generate-selector(seashell-peach, @seashell-peach);
+.generate-selector(beige, @beige);
+.generate-selector(bridal-heath, @bridal-heath);
+.generate-selector(champagne, @champagne);
+.generate-selector(linen, @linen);
+.generate-selector(sorrell-brown, @sorrell-brown);
+.generate-selector(old-lace, @old-lace);
+.generate-selector(half-spanish-white, @half-spanish-white);
+.generate-selector(varden, @varden);
+.generate-selector(sandy-beach, @sandy-beach);
+.generate-selector(negroni, @negroni);
+.generate-selector(navajo-white, @navajo-white);
+.generate-selector(wheat, @wheat);
+.generate-selector(calico, @calico);
+.generate-selector(tan, @tan);
+.generate-selector(papaya-whip, @papaya-whip);
+.generate-selector(peach, @peach);
+.generate-selector(frangipani, @frangipani);
+.generate-selector(wax-flower, @wax-flower);
+.generate-selector(copperfield, @copperfield);
+.generate-selector(apricot, @apricot);
+.generate-selector(web-orange, @web-orange);
+.generate-selector(orange-peel, @orange-peel);
+.generate-selector(pizzazz, @pizzazz);
+.generate-selector(west-side, @west-side);
+.generate-selector(gamboge, @gamboge);
+.generate-selector(hot-cinnamon, @hot-cinnamon);
+.generate-selector(orange, @orange);
+.generate-selector(persimmon, @persimmon);
+.generate-selector(vermilion, @vermilion);
+.generate-selector(coral, @coral);
+.generate-selector(burnt-sienna, @burnt-sienna);
+.generate-selector(sandy-brown, @sandy-brown);
+.generate-selector(cream, @cream);
+.generate-selector(half-and-half, @half-and-half);
+.generate-selector(lemon-chiffon, @lemon-chiffon);
+.generate-selector(corn-field, @corn-field);
+.generate-selector(double-colonial-white, @double-colonial-white);
+.generate-selector(ivory, @ivory);
+.generate-selector(chalky, @chalky);
+.generate-selector(gorse, @gorse);
+.generate-selector(yellow, @yellow);
+.generate-selector(chenin, @chenin);
+.generate-selector(zombie, @zombie);
+.generate-selector(starship, @starship);
+.generate-selector(macaroni-and-cheese, @macaroni-and-cheese);
+.generate-selector(amber, @amber);
+.generate-selector(gold, @gold);
+.generate-selector(anzac, @anzac);
+.generate-selector(cream-can, @cream-can);
+.generate-selector(saffron, @saffron);
+.generate-selector(khaki, @khaki);
+.generate-selector(coral-reef, @coral-reef);
+.generate-selector(gimblet, @gimblet);
+.generate-selector(husk, @husk);
+.generate-selector(gurkha, @gurkha);
+.generate-selector(snowy-mint, @snowy-mint);
+.generate-selector(hint-of-green, @hint-of-green);
+.generate-selector(norway, @norway);
+.generate-selector(sushi, @sushi);
+.generate-selector(chelsea-cucumber, @chelsea-cucumber);
+.generate-selector(mint-green, @mint-green);
+.generate-selector(pastel-green, @pastel-green);
+.generate-selector(green, @green);
+.generate-selector(apple, @apple);
+.generate-selector(fruit-salad, @fruit-salad);
+.generate-selector(salem, @salem);
+.generate-selector(spring-green, @spring-green);
+.generate-selector(caribbean-green, @caribbean-green);
+.generate-selector(ocean-green, @ocean-green);
+.generate-selector(sea-green, @sea-green);
+.generate-selector(forest-green, @forest-green);
+.generate-selector(japanese-laurel, @japanese-laurel);
+.generate-selector(summer-green, @summer-green);
+.generate-selector(veridian-green, @veridian-green);
+.generate-selector(camarone, @camarone);
+.generate-selector(parsley, @parsley);
+.generate-selector(pear, @pear);
+.generate-selector(atlantis, @atlantis);
+.generate-selector(green-yellow, @green-yellow);
+.generate-selector(chartreuse, @chartreuse);
+.generate-selector(lima, @lima);
+.generate-selector(olive-drab, @olive-drab);
+.generate-selector(costa-del-sol, @costa-del-sol);
+.generate-selector(olive, @olive);
+.generate-selector(teal, @teal);
+.generate-selector(persian-green, @persian-green);
+.generate-selector(eastern-blue, @eastern-blue);
+.generate-selector(pine-green, @pine-green);
+.generate-selector(oracle, @oracle);
+.generate-selector(boston-blue, @boston-blue);
+.generate-selector(eden, @eden);
+.generate-selector(elephant, @elephant);
+.generate-selector(cyan, @cyan);
+.generate-selector(sinbad, @sinbad);
+.generate-selector(anakiwa, @anakiwa);
+.generate-selector(blizzard-blue, @blizzard-blue);
+.generate-selector(charlotte, @charlotte);
+.generate-selector(downie, @downie);
+.generate-selector(bright-turquoise, @bright-turquoise);
+.generate-selector(baby-blue, @baby-blue);
+.generate-selector(robin-eggs-blue, @robin-eggs-blue);
+.generate-selector(aquamarine, @aquamarine);
+.generate-selector(viking, @viking);
+.generate-selector(puerto-rico, @puerto-rico);
+.generate-selector(blue-chill, @blue-chill);
+.generate-selector(turquoise, @turquoise);
+.generate-selector(patina, @patina);
+.generate-selector(breaker-bay, @breaker-bay);
+.generate-selector(steel-blue, @steel-blue);
+.generate-selector(cornflour-blue, @cornflour-blue);
+.generate-selector(cerulean, @cerulean);
+.generate-selector(dodger-blue, @dodger-blue);
+.generate-selector(fountain-blue, @fountain-blue);
+.generate-selector(glacier, @glacier);
+.generate-selector(royal-blue, @royal-blue);
+.generate-selector(tranquil, @tranquil);
+.generate-selector(mabel, @mabel);
+.generate-selector(spindle, @spindle);
+.generate-selector(seagull, @seagull);
+.generate-selector(regent-st-blue, @regent-st-blue);
+.generate-selector(powder-blue, @powder-blue);
+.generate-selector(malibu, @malibu);
+.generate-selector(cornflour, @cornflour);
+.generate-selector(blue, @blue);
+.generate-selector(dark-blue, @dark-blue);
+.generate-selector(navy-blue, @navy-blue);
+.generate-selector(lucky-point, @lucky-point);
+.generate-selector(blue-charcoal, @blue-charcoal);
+.generate-selector(gulf-blue, @gulf-blue);
+.generate-selector(marshland, @marshland);
+.generate-selector(lynch, @lynch);
+.generate-selector(spectra, @spectra);
+.generate-selector(bali-hai, @bali-hai);
+.generate-selector(nevada, @nevada);
+.generate-selector(blue-bayoux, @blue-bayoux);
+.generate-selector(periwinkle-gray, @periwinkle-gray);
+.generate-selector(pigeon-post, @pigeon-post);
+.generate-selector(ebony-clay, @ebony-clay);
+.generate-selector(charade, @charade);
+.generate-selector(clinker, @clinker);
+.generate-selector(hot-tody, @hot-tody);
+.generate-selector(raw-sienna, @raw-sienna);
+.generate-selector(copper-canyon, @copper-canyon);
+.generate-selector(paarl, @paarl);
+.generate-selector(roman-coffee, @roman-coffee);
+.generate-selector(shingle-fawn, @shingle-fawn);
+.generate-selector(golden-grass, @golden-grass);
+.generate-selector(maroon, @maroon);
+.generate-selector(cocoa-bean, @cocoa-bean);
 
 
-.generate-selector(pink-pale, @pink-pale[01]);
-.generate-selector(pink-light, @pink-light[01]);
-.generate-selector(pink, @pink[01]);
-.generate-selector(pink-dark, @pink-dark[01]);
-
-
-.generate-selector(purple-pale, @purple-pale[01]);
-.generate-selector(purple, @purple[01]);
-.generate-selector(purple-deep, @purple-deep[01]);
-.generate-selector(indigo, @indigo[01]);
-
-.generate-selector(red-pale, @red-pale[01]);
-.generate-selector(red-light, @red-light[01]);
-.generate-selector(red, @red[01]);
-.generate-selector(red-dark, @red-dark[01]);
-
-.generate-selector(orange-pale, @orange-pale[01]);
-.generate-selector(orange-light, @orange-light[01]);
-.generate-selector(orange, @orange[01]);
-.generate-selector(orange-deep, @orange-deep[01]);
-.generate-selector(peach, @peach[01]);
-
-.generate-selector(yellow-pale, @yellow-pale[01]);
-.generate-selector(yellow, @yellow[01]);
-.generate-selector(amber, @amber[01]);
-.generate-selector(khaki, @khaki[01]);
-
-.generate-selector(green-pale, @green-pale[01]);
-.generate-selector(green-light, @green-light[01]);
-.generate-selector(green, @green[01]);
-.generate-selector(green-gray, @green-gray[01]);
-.generate-selector(green-dark, @green-dark[01]);
-.generate-selector(lime, @lime[01]);
-.generate-selector(olive, @olive[01]);
-
-.generate-selector(teal, @teal[01]);
-.generate-selector(teal-dark, @teal-dark[01]);
-.generate-selector(aqua, @aqua[01]);
-.generate-selector(cyan, @cyan[01]);
-
-.generate-selector(blue, @blue[01]);
-.generate-selector(blue-pale, @blue-pale[01]);
-.generate-selector(blue-light, @blue-light[01]);
-.generate-selector(blue-dark, @blue-dark[01]);
-.generate-selector(blue-gray, @blue-gray[01]);
-
-.generate-selector(brown, @brown[01]);
-.generate-selector(maroon, @maroon[01]);
-
-.generate-selector(@color: black, @var: @color) {
-
+.generate-selector(@color-name: black, @variable-name: @black) {
   .colors {
-
-    &--wrapper---@{color} {
-      color: @var;
-    }
-
-    &--block---@{color} {
-      background-color: @var;
+    &__block--@{color-name} {
+      background-color: @variable-name;
     }
   }
 }
