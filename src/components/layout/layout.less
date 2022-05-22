@@ -4,7 +4,7 @@
     min-height: 50vh;
     display: grid;
     grid-template-columns: 240px 1fr 240px;
-    box-shadow: 2px 4px 2px lighten(@colors[graylight], 10%);
+    box-shadow: 2px 4px 2px lighten(@color[graylight], 10%);
   }
 
   &__description {
@@ -13,12 +13,13 @@
     &-header {
       padding: 0 1rem;
       margin-bottom: 2rem;
-      #border.solid(bottom, 4px, @colors[primary]);
+      #border.solid(bottom, 4px, @color[primary]);
     }
   }
 
   &__side {
     background-color: @mystic;
     padding: 1rem;
+    // box-shadow: 2px 2px 2px black;
   }
 }

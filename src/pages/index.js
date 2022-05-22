@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Menu from '../components/menu/menu';
 import '../less/imports.less';
 
@@ -39,6 +40,7 @@ const IndexPage = ({ data }) => {
     <>
       <Menu menuType={`sub`} menuItems={documentationLinks} />
       <div className={`about-container`}>
+        {/* <MDXRenderer>{body}</MDXRenderer> */}
 
         <h1>About Less Style Library</h1>
 

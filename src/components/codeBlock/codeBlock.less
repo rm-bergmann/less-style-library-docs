@@ -1,0 +1,28 @@
+.code-block {
+  display: flex;
+  margin: 1rem 0;
+  align-items: center;
+
+  pre {
+    border-radius: @settings[radius];
+    background-color: black !important;
+  }
+
+  &__example {
+    width: 80%;
+  }
+
+  &__description {
+    padding: 1rem 0;
+    margin: 2rem 0 1rem 0;
+    padding-left: 2rem;
+    width: 75%;
+    font-size: 1.1rem;
+    #border.solid(left, 8px, @color[primary]);
+
+    pre {
+      border-radius: @settings[radius];
+      background-color: black !important;
+    }
+  }
+}

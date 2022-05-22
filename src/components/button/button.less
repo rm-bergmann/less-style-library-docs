@@ -1,0 +1,40 @@
+.button {
+
+  &-wrapper {
+    margin-left: auto;
+  }
+
+  &-01 {
+    #button.flat();
+  }
+
+  &-02 {
+    #button.flat(@sea-green);
+  }
+
+  &-03 {
+    #button.flat(rounded, @plum);
+  }
+
+  &-04 {
+    #button.flat(round, @mexican-red);
+  }
+
+  &-06 {
+    #button.custom(@color[pale], @color[primary], 20px, 1.2rem, @settings[radius]);
+    #border.solid(2px, @color[primary]);
+    box-shadow: 1px 2px 1px @color[graymedium];
+  }
+
+  &-07 {
+    #button.custom(rgb(78, 11, 69), #fff, 14px, 1.1rem, 6px);
+  }
+
+  &-link {
+    #button.link();
+
+    &---orange {
+      #button.link(@orange, @white, 1rem, 18px, @settings[radius]);
+    }
+  }
+}

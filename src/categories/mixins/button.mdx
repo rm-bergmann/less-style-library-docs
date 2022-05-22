@@ -6,120 +6,198 @@ description: Mixins for basic button styles
 ---
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
+import Button from '../../components/button/button';
 
 Button mixins currently supported are:
 
-* flat / flat - rounded
+* flat 
+* flat rounded
+* flat round
 * custom
 * link
 
-<CodeBlock mixinName={`shape`}>
-  #button.flat();
-</CodeBlock>
-
-By default the background colour is set to the @color-01 variable which is currently set to @teal in this app. 
-Target the element you want to style and call the mixin.
-By default, @color-01 is set to @blue.
-
-<div className="button">
-  <button type="button" className="button--button-01">
-    Button 01
-  </button>
+<div className={`code-block__description`}>
+  By default the background colour is set to the @color[primary] setting
+  Target the element you want to style and call the mixin. The padding 
+  and font-size values are fixed to 1rem. The hover background color 
+  slightly darkend for a subtle hover effect. The button text color is fixed
+  to white.
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #button.flat();
-</CodeBlock>
+<div className="code-block">
 
-<div className="button">
-  <button type="button" className="buttons--button-01 button--button-01---green">
-    Button 01
-  </button>
+  <div className="code-block__example">
+    <CodeBlock mixinName={`button`}>
+      #button.flat();
+    </CodeBlock>
+  </div>
+
+  <Button buttonLabel={`Button 01`} />
+
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #button.flat(@green);
-</CodeBlock>
-
-<div className="button">
-  <button type="button" className="button--button-02">
-    Button 02
-  </button>
+<div className={`code-block__description`}>
+  Change the background colour by passing in the hex or color name 
+  variable of your choice.
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #button.flat(rounded, @red);
-</CodeBlock>
+<div className="code-block">
 
-<div className="button">
-  <button type="button" className="buttons--button-02 button--button-02---red">
-    Button 02
-  </button>
+  <div className="code-block__example">
+    <CodeBlock mixinName={`button`}>
+      #button.flat(@sea-green);
+    </CodeBlock>
+  </div>
+
+  <Button buttonLabel={`Button 02`} />
+
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #button.flat(round, @purple);
-</CodeBlock>
-
-The custom button mixins allow you to fully customize a button style in 1 line of code.
-The following 5 paramaters are supported, and include the following default values.
-
-* background-color: @color;
-* color: white;
-* font-size: 1rem;
-* padding: 1rem;
-* border-radius: 0; 
-
-<div className="button">
-  <button type="button" className="button--button-03">
-    Button 03
-  </button>
+<div className={`code-block__description`}>
+  For rounded edges you can pass in 'rounded' which will automatically
+  add a border radius which is set to the @settings[radius] value.
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #button.custom(@teal, white, .8rem, 1.1rem, .4rem);
-</CodeBlock>
+<div className="code-block">
+  <div className="code-block__example">
+    <CodeBlock mixinName={`button`}>
+      #button.flat(rounded, @plum);
+    </CodeBlock>
+  </div>
 
-<div className="button">
-  <button type="button" className="buttons--button-03 button--button-03---purple">
-    Button 03
-  </button>
+  <Button buttonLabel={`Button 03`} />
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #button.custom(#c9c9c9, black, 20px, 16px, 10px);
-</CodeBlock>
-
-
-<div className="button">
-  <button type="button" className="button--button-04">
-    Button 04
-  </button>
+<div className={`code-block__description`}>
+  For round buttons pass in 'round' as the first parameter
 </div>
 
-<div className="button">
-  <button type="button" className="buttons--button-04 button--button-04---gray">
-    Button 04
-  </button>
+
+<div className="code-block">
+  <div className="code-block__example">
+    <CodeBlock mixinName={`button`}>
+      #button.flat(round, @purple);
+    </CodeBlock>
+  </div>
+
+  <Button buttonLabel={`Button 04`} />
 </div>
 
-<div className="button">
-  <a className="button--button-link" href="/">
-    I am a link
-  </a>
+<div className={`code-block__description`}>
+  The custom button mixins allow you to fully customize a button style in 
+  a single line of code.
+  The following 5 paramaters are supported, and include the following default values.
+  <p>&nbsp;</p>
+
+  <CodeBlock mixinName={`button`}>
+    background-color: @color[primary];
+  </CodeBlock>
+  <CodeBlock mixinName={`button`}>
+    color: white;
+  </CodeBlock>
+  <CodeBlock mixinName={`button`}>
+    font-size: 1rem;
+  </CodeBlock>
+  <CodeBlock mixinName={`button`}>
+    padding: 1rem;
+  </CodeBlock>
+  <CodeBlock mixinName={`button`}>
+    border-radius: 0;
+  </CodeBlock>
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #button.link();
-</CodeBlock>
-
-<div className="button">
-  <a className="buttons--button-link button--button-link---orange" href="/">
-    I am also a link
-  </a>
+<div className={`code-block__description`}>
+  Here is an example of a custom button using settings variables
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #button.link(@orange, white, 10px, 14px, 4px);
-</CodeBlock>
+<div className="code-block">
+  <div className="code-block__example">
+    <CodeBlock mixinName={`button`}>
+      #button.custom(@color[pale], @color[primary], 20px, 1.1rem, @settings[radius]);
+    </CodeBlock>
+    <CodeBlock mixinName={`button`}>
+      border: 2px solid @color[primary];
+    </CodeBlock>
+    <CodeBlock mixinName={`button`}>
+      box-shadow: 1px 2px 1px @color[graymedium];
+    </CodeBlock>
+  </div>
 
+  <Button buttonLabel={`Button 06`} />
+</div>
+
+<div className={`code-block__description`}>
+  Here is an example of a custom button using random values. To further customize
+  this button I style, an additional border and box shadow was added.
+</div>
+
+<div className="code-block">
+  <div className="code-block__example">
+    <CodeBlock mixinName={`button`}>
+      #button.custom(rgb(78, 11, 69), #fff, 14px, 1.1rem, 6px);
+    </CodeBlock>
+  </div>
+
+  <Button buttonLabel={`Button 07`} />
+</div>
+
+<div className={`code-block__description`}>
+  To style a link as a button use the following line:
+</div>
+
+<div className="code-block">
+  <div className="code-block__example">
+    <CodeBlock mixinName={`button`}>
+      #button.link();
+    </CodeBlock>
+  </div>
+
+  <div className="button-wrapper">
+    <a className="button-link" href="#">
+      Link 1
+    </a>
+  </div>
+</div>
+
+
+<div className={`code-block__description`}>
+  To customize the link button style pass in the following parameters:
+  (Default values are shown in comments)
+
+  <p>&nbsp;</p>
+
+  <CodeBlock mixinName={`button`}>
+    background-color /* primary color */
+  </CodeBlock>
+
+  <CodeBlock mixinName={`button`}>
+    color  /* white */
+  </CodeBlock>
+
+  <CodeBlock mixinName={`button`}>
+    padding /* .7rem 1rem */
+  </CodeBlock>
+
+  <CodeBlock mixinName={`button`}>
+    font-size /* 1rem */
+  </CodeBlock>
+
+  <CodeBlock mixinName={`button`}>
+    border-radius /* 0 */
+  </CodeBlock>
+
+</div>
+
+<div className="code-block">
+  <div className="code-block__example">
+    <CodeBlock mixinName={`button`}>
+      #button.link(@orange, @white, 1rem, 18px, @settings[radius]);
+    </CodeBlock>
+  </div>
+
+  <div className="button-wrapper">
+    <a className="button-link button-link---orange" href="#">
+      Link 2
+    </a>
+  </div>
+</div>

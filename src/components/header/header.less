@@ -13,25 +13,29 @@
       font-weight: bold;
       display: block;
       color: white;
-    }
-  }
 
-  &--mobile-menu {
-    // #grid.column(span, 11, 2);
-
-    .menu {
-      display: none;
-    }
-
-    svg {
-      cursor: pointer;
-
-      @media @desktop-small-min {
-        display: none;
+      &:hover {
+        color: @color[contrast];
       }
     }
 
-    .hide-desktop();
+    &--mobile-menu {
+      // #grid.column(span, 11, 2);
+
+      .menu {
+        display: none;
+      }
+
+      svg {
+        cursor: pointer;
+
+        @media @desktop-small-min {
+          display: none;
+        }
+      }
+
+      .hide-desktop();
+    }
   }
 }
 

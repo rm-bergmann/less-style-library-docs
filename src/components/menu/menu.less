@@ -25,6 +25,7 @@
     display: none;
     background: @mystic;
     min-height: 50vh;
+    padding: 0 6px 0 4px;
     #border.solid(top, 4px, white);
 
     @media @tablet-small-min {
@@ -57,7 +58,7 @@
   margin: 0 .4rem;
   border-radius: @settings[radius];
   transition: all .3s;
-  #border.solid(2px, white);
+  #border.solid(2px, @color[graylight]);
 
   &:hover,
   &--active {
@@ -71,11 +72,14 @@
   display: block;
   padding: .6rem 0 .6rem 1rem;
   transition: all .3s;
-  #border.solid(bottom, 2px, white);
-  background-color: darken(@color-01, 10%);
+  border-radius: @settings[radius];
+  // #border.solid(bottom, 4px, @color[graylight]);
+  // background-color: darken(@color-01, 10%);
+  margin-bottom: 4px;
+  #gradient.linear(left, @color[secondary], darken(@color-01, 10%));
 
   &:hover,
   &--active {
-    background-color: lighten(@color-01, 5%);
+    #gradient.linear(left, lighten(@color[primary], 10%), @color[primary]);
   }
 }

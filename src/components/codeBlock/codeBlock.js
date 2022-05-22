@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark, a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const CodeBlock = ({ mixinName, children, number }) => {
   const renderDiv = number ?
@@ -13,9 +13,10 @@ const CodeBlock = ({ mixinName, children, number }) => {
       {renderDiv}
       <div className={`code-wrapper`}>
         <SyntaxHighlighter
-          language="css"
-          style={atomDark}
+          language={`css`}
+          style={darcula}
           showLineNumbers
+          className={`language-css`}
         >
           {children}
         </SyntaxHighlighter>
