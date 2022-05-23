@@ -48,7 +48,7 @@ const IndexPage = ({ data }) => {
 
         <p>This library also includes variables for colour names and media queries</p>
 
-        <h3>This is a useful tool if:</h3>
+        <h2>This is a useful tool if:</h2>
 
         <ul>
           <li>You like designing in the browser</li>
@@ -60,6 +60,12 @@ const IndexPage = ({ data }) => {
         </ul>
 
         <h3>Why is Less the chosen CSS preprocesser for this library?</h3>
+
+        <p>Less is a declaritive language which extends CSS. <br /><br />
+          <a href="https://medium.com/@matthewdeaners/less-the-world-s-most-misunderstood-css-pre-processor-76273881cb03">This article</a> explains
+          more about the details on how Less compares to other preprocessors such as Sass, however the main
+          inspiration for writing this library is the way Mixins are declared in Less, which allows to
+          declare namespaced mixins using simple CSS like syntax (eg, the <strong>#</strong> and <strong>.</strong> characters which represent ID and class)</p>
 
       </div>
       <aside className={`layout__side`}>
