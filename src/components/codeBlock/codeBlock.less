@@ -9,14 +9,14 @@
   }
 
   &__example {
-    width: 80%;
+    width: 70%;
   }
 
   &__description {
     padding: 1rem 0;
     margin: 2rem 0 1rem 0;
     padding-left: 2rem;
-    width: 75%;
+    width: 70%;
     font-size: 1.1rem;
     #border.solid(left, 8px, @color[primary]);
 
@@ -25,4 +25,20 @@
       background-color: black !important;
     }
   }
+}
+
+.linenumber span.react-syntax-highlighter-line-number>span {
+  position: relative;
+}
+
+.linenumber span.react-syntax-highlighter-line-number>span::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
 }

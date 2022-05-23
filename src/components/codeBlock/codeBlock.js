@@ -10,16 +10,18 @@ const CodeBlock = ({ mixinName, children, number }) => {
 
   return (
     <>
-      {renderDiv}
-      <div className={`code-wrapper`}>
-        <SyntaxHighlighter
-          language={`css`}
-          style={darcula}
-          showLineNumbers
-          className={`language-css`}
-        >
-          {children}
-        </SyntaxHighlighter>
+      { /* renderDiv */}
+      <div className="code-block__example">
+        <div className={`code-wrapper`}>
+          <SyntaxHighlighter
+            language={`css`}
+            style={darcula}
+            showLineNumbers
+            className={`language-css`}
+          >
+            {children}
+          </SyntaxHighlighter>
+        </div>
       </div>
     </>
   );

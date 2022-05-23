@@ -6,15 +6,21 @@ description: Designed to easily add any type of border to an element
 ---
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
+import Border from '../../components/border/border';
 
-There are 2 types of Border Mixins: Border Styles and Border Radius.
+There are 2 types of Border Mixins: 
+* Border Styles 
+* Border Radius.
+
 All Border Mixins follow a naming pattern.
 
 ## Border Style Mixins
 
-<CodeBlock mixinName={`border`}>
-  #border.border-style(position, border-width, border-color);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`border`}>
+    #border.border-style(position, border-width, border-color);
+  </CodeBlock>
+</div>
 
 ### Parameter Options:
 
@@ -26,76 +32,140 @@ All Border Mixins follow a naming pattern.
 
 ## Border Radius Mixins
 
-<CodeBlock mixinName={`border`}>
-  #border.radius(position, value);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`border`}>
+    #border.radius(position, value);
+  </CodeBlock>
+</div>
 
 ### Parameter Options:
 
 * The *position* parameter is optional
 * The *position* options are **top**, **bottom**, **left** and **right**
-* The default value is *4px*
+* The default value is set to the *@settings[radius]* value
 
 ---
 
 ## Usage Examples:
 
-Black solid 1px border (default)
 
-<CodeBlock mixinName={`border`} number={`01`}>
-  #border.solid();
-</CodeBlock>
+<div className={`code-block__description`}>
+  Black solid 1px border (default)
+</div>
 
-If you want a 4px solid red border you can pass in the border width of 4px, and the desired color.
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`01`}>
+    #border.solid();
+  </CodeBlock>
 
-<CodeBlock mixinName={`border`} number={`02`}>
-  #border.dotted(4px, #f00);
-</CodeBlock>
+  <Border index={`01`} />
+</div>
 
-If you want a 2px green top border only you pass in top (or bottom / left / right), border-width value and color
+<div className={`code-block__description`}>
+  If you want a 4px solid red border you can pass in the border width of 4px, and the desired color.
+</div>
 
-<CodeBlock mixinName={`border`} number={`03`}>
-  #border.dashed(top, 2px, green);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`02`}>
+    #border.dotted(4px, #f00);
+  </CodeBlock>
 
-If you need paralell top & bottom or left & right borders pass in vertical or horizontal:
+  <Border index={`02`} />
+</div>
 
-<CodeBlock mixinName={`border`} number={`04`}>
-  #border.solid(vertical, 4px, #333);
-</CodeBlock>
+<div className={`code-block__description`}>
+  If you want a 2px green top border only you pass in top (or bottom / left / right), border-width value and color
+</div>
 
-<CodeBlock mixinName={`border`} number={`05`}>
-  #border.solid(horizontal, 2px, black);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`03`}>
+    #border.dashed(top, 2px, green);
+  </CodeBlock>
 
-Add a 6px black left border
+  <Border index={`03`} />
+</div>
 
-<CodeBlock mixinName={`border`} number={`06`}>
-  #border.solid(left, 6px, black);
-</CodeBlock>
+<div className={`code-block__description`}>
+  If you need paralell top & bottom or left & right borders pass in vertical or horizontal:
+</div>
 
-Useful border-radius mixins when we need a top left and right radius or bottom left and right radius.
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`04`}>
+    #border.solid(vertical, 4px, #333);
+  </CodeBlock>
 
-<CodeBlock mixinName={`border`} number={`07`}>
-  #border.radius();
-</CodeBlock>
+  <Border index={`04`} />
+</div>
 
-<CodeBlock mixinName={`border`} number={`08`}>
-  #border.radius(20px);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`05`}>
+    #border.solid(horizontal, 4px, @color[primary]);
+  </CodeBlock>
+  
+  <Border index={`05`} />
+</div>
 
-<CodeBlock mixinName={`border`} number={`09`}>
-  #border.radius(top);
-</CodeBlock>
+<div className={`code-block__description`}>
+  Add a 6px black left border
+</div>
 
-<CodeBlock mixinName={`border`} number={`10`}>
-  #border.radius(bottom, 8px);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`06`}>
+    #border.solid(left, 6px, black);
+  </CodeBlock>
 
-<CodeBlock mixinName={`border`} number={`11`}>
-  #border.radius(left, 10px);
-</CodeBlock>
+  <Border index={`06`} />
+</div>
 
-<CodeBlock mixinName={`border`} number={`12`}>
-  #border.radius(right, 50px);
-</CodeBlock>
+<div className={`code-block__description`}>
+  Useful border-radius mixins when we need a top left and right radius or 
+  bottom left and right radius.
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`07`}>
+    #border.radius();
+  </CodeBlock>
+
+  <Border index={`07`} />
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`08`}>
+    #border.radius(20px);
+  </CodeBlock>
+
+  <Border index={`08`} />
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`09`}>
+    #border.radius(top);
+  </CodeBlock>
+
+  <Border index={`09`} />
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`10`}>
+    #border.radius(bottom, 8px);
+  </CodeBlock>
+
+  <Border index={`10`} />
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`11`}>
+    #border.radius(left, 10px);
+  </CodeBlock>
+
+  <Border index={`11`} />
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`border`} number={`12`}>
+    #border.radius(right, 50px);
+  </CodeBlock>
+
+  <Border index={`12`} />
+</div>

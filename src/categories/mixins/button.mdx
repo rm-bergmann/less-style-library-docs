@@ -26,11 +26,9 @@ Button mixins currently supported are:
 
 <div className="code-block">
 
-  <div className="code-block__example">
-    <CodeBlock mixinName={`button`}>
-      #button.flat();
-    </CodeBlock>
-  </div>
+  <CodeBlock mixinName={`button`}>
+    #button.flat();
+  </CodeBlock>
 
   <Button buttonLabel={`Button 01`} />
 
@@ -43,11 +41,9 @@ Button mixins currently supported are:
 
 <div className="code-block">
 
-  <div className="code-block__example">
-    <CodeBlock mixinName={`button`}>
-      #button.flat(@sea-green);
-    </CodeBlock>
-  </div>
+  <CodeBlock mixinName={`button`}>
+    #button.flat(@sea-green);
+  </CodeBlock>
 
   <Button buttonLabel={`Button 02`} />
 
@@ -59,11 +55,9 @@ Button mixins currently supported are:
 </div>
 
 <div className="code-block">
-  <div className="code-block__example">
-    <CodeBlock mixinName={`button`}>
-      #button.flat(rounded, @plum);
-    </CodeBlock>
-  </div>
+  <CodeBlock mixinName={`button`}>
+    #button.flat(rounded, @plum);
+  </CodeBlock>
 
   <Button buttonLabel={`Button 03`} />
 </div>
@@ -74,11 +68,9 @@ Button mixins currently supported are:
 
 
 <div className="code-block">
-  <div className="code-block__example">
-    <CodeBlock mixinName={`button`}>
-      #button.flat(round, @purple);
-    </CodeBlock>
-  </div>
+  <CodeBlock mixinName={`button`}>
+    #button.flat(round, @mexican-red);
+  </CodeBlock>
 
   <Button buttonLabel={`Button 04`} />
 </div>
@@ -90,53 +82,36 @@ Button mixins currently supported are:
   <p>&nbsp;</p>
 
   <CodeBlock mixinName={`button`}>
-    background-color: @color[primary];
+    {`background-color: @color[primary]; \ncolor: white; \nfont-size: 1rem; \npadding: 1rem; \nborder-radius: 0;`}
   </CodeBlock>
-  <CodeBlock mixinName={`button`}>
-    color: white;
-  </CodeBlock>
-  <CodeBlock mixinName={`button`}>
-    font-size: 1rem;
-  </CodeBlock>
-  <CodeBlock mixinName={`button`}>
-    padding: 1rem;
-  </CodeBlock>
-  <CodeBlock mixinName={`button`}>
-    border-radius: 0;
-  </CodeBlock>
-</div>
 
-<div className={`code-block__description`}>
-  Here is an example of a custom button using settings variables
+  <p>&nbsp;</p>
+
+  The next example shows a custom button using settings variables. 
+  To further customize this button style, an additional border and 
+  box shadow was added.
 </div>
 
 <div className="code-block">
-  <div className="code-block__example">
-    <CodeBlock mixinName={`button`}>
-      #button.custom(@color[pale], @color[primary], 20px, 1.1rem, @settings[radius]);
-    </CodeBlock>
-    <CodeBlock mixinName={`button`}>
-      border: 2px solid @color[primary];
-    </CodeBlock>
-    <CodeBlock mixinName={`button`}>
-      box-shadow: 1px 2px 1px @color[graymedium];
-    </CodeBlock>
-  </div>
+  <CodeBlock mixinName={`button`}>
+    {`#button.custom(@color[pale], @color[primary], 20px, 1.1rem, @settings[radius]);
+border: 2px solid @color[primary];
+box-shadow: 1px 2px 1px @color[graymedium];`}
+  </CodeBlock>
+
+  <p>&nbsp;</p>
 
   <Button buttonLabel={`Button 06`} />
 </div>
 
 <div className={`code-block__description`}>
-  Here is an example of a custom button using random values. To further customize
-  this button I style, an additional border and box shadow was added.
+  Here is an example of a custom button using random values. 
 </div>
 
 <div className="code-block">
-  <div className="code-block__example">
-    <CodeBlock mixinName={`button`}>
-      #button.custom(rgb(78, 11, 69), #fff, 14px, 1.1rem, 6px);
-    </CodeBlock>
-  </div>
+  <CodeBlock mixinName={`button`}>
+    #button.custom(rgb(78, 11, 69), #fff, 14px, 1.1rem, 6px);
+  </CodeBlock>
 
   <Button buttonLabel={`Button 07`} />
 </div>
@@ -146,11 +121,9 @@ Button mixins currently supported are:
 </div>
 
 <div className="code-block">
-  <div className="code-block__example">
-    <CodeBlock mixinName={`button`}>
-      #button.link();
-    </CodeBlock>
-  </div>
+  <CodeBlock mixinName={`button`}>
+    #button.link();
+  </CodeBlock>
 
   <div className="button-wrapper">
     <a className="button-link" href="#">
@@ -167,33 +140,18 @@ Button mixins currently supported are:
   <p>&nbsp;</p>
 
   <CodeBlock mixinName={`button`}>
-    background-color /* primary color */
+    {`background-color /* primary color */
+color  /* white */
+padding /* .7rem 1rem */
+font-size /* 1rem */
+border-radius /* 0 */`}
   </CodeBlock>
-
-  <CodeBlock mixinName={`button`}>
-    color  /* white */
-  </CodeBlock>
-
-  <CodeBlock mixinName={`button`}>
-    padding /* .7rem 1rem */
-  </CodeBlock>
-
-  <CodeBlock mixinName={`button`}>
-    font-size /* 1rem */
-  </CodeBlock>
-
-  <CodeBlock mixinName={`button`}>
-    border-radius /* 0 */
-  </CodeBlock>
-
 </div>
 
 <div className="code-block">
-  <div className="code-block__example">
-    <CodeBlock mixinName={`button`}>
-      #button.link(@orange, @white, 1rem, 18px, @settings[radius]);
-    </CodeBlock>
-  </div>
+  <CodeBlock mixinName={`button`}>
+    #button.link(@orange, @white, 1rem, 18px, @settings[radius]);
+  </CodeBlock>
 
   <div className="button-wrapper">
     <a className="button-link button-link---orange" href="#">
