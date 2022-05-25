@@ -2,23 +2,49 @@
 title: Settings
 slug: settings
 category: documentation
-description: default settings
+description: Default Settings
 ---
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
 
-This library includes default settings which can be overridden in your application.
+<div className={`code-block__description`}>
+  This library includes default settings which are grouped into a single variable 
+  and can be overridden in your application. 
+  <p>&nbsp;</p>
+  The current avaialable settings are:
 
-<CodeBlock mixinName={`documentation`}>
-  {`@settings {
-  [radius]: 4px;
+  <CodeBlock mixinName={`documentation`}>
+    {`Border Radius
+Primary Font
+Secondary Font`}
+  </CodeBlock>
+</div>
+
+<div className={`code-block__description`}>
+  The default settings values are exactly as rendered in this documenattion 
+  website.
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`documentation`}>
+    {`@settings {
+  radius: 4px;
+  primary-font: 'Roboto';
+  secondary-font: 'Tahoma';
 }`}
-</CodeBlock>
+  </CodeBlock>
+</div>
 
-<CodeBlock mixinName={`documentation`}>
-  {`@colors {
-  [primary]: @elephant;
-  [secondary]:
+<div className={`code-block__description`}>
+  The color variables are also grouped and named following a general design 
+  concept for using colors in an application.
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`documentation`}>
+    {`@colors {
+  primary: @elephant;
+  secondary: @fresh-eggplant;
 }`}
-
-</CodeBlock>
+  </CodeBlock>
+</div>

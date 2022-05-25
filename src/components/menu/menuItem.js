@@ -8,15 +8,23 @@ const MenuItem = ({ menuItems }) => {
   const activeClassName = `${linkClassName}--active`;
   const menuItemValues = Object.values(menuItems);
 
+  let partiallyActive = ({ partiallyCurrent }) =>
+    partiallyCurrent ? true : false;
 
   const renderLinks = menuItemValues.map(menuItem => {
     const { linkText, linkRoute } = menuItem;
+
+    if (linkText == 'About') {
+      partiallyActive = false;
+    }
+
     return (
       <li key={linkText} className={itemClassName}>
         <Link
           key={linkText}
           className={linkClassName}
           activeClassName={activeClassName}
+          partiallyActive={partiallyActive}
           to={linkRoute}
         >
           {linkText}

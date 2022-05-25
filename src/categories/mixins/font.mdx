@@ -7,35 +7,48 @@ description: Mixins for font family definitions, sizes and weight
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
 
-
 A basic mixin to set a **font-size** and **font-weight** in 1 line of code:
 
-<CodeBlock mixinName={`font`}>
-  #font.settings(font-size, font-weight);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`font`}>
+    #font.settings(font-size, font-weight);
+  </CodeBlock>
+</div>
 
 * The **#font.type** mixin can be used to set a font-family. 
 * Currently 2 font families aare supported: **Sans-serif** and **Serif**
 * The default option is **sans-serif**
 
-<CodeBlock mixinName={`font`}>
-  #font.type();
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`font`}>
+    #font.type();
+  </CodeBlock>
+</div>
 
-Will output the following CSS:
+<div className={`code-block__description`}>
+  Will output the following CSS:
+</div>
 
-<CodeBlock mixinName={`font`}>
-  font-family: Arial, Helvetica, sans-serif;
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`font`}>
+    font-family: Arial, Helvetica, sans-serif;
+  </CodeBlock>
+</div>
 
 To set a **serif** font-family, just pass it in as a parameter:
 
-<CodeBlock mixinName={`font`}>
-  #font.type(serif);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`font`}>
+    #font.type(serif);
+  </CodeBlock>
+</div>
 
-Will output the following CSS:
+<div className={`code-block__description`}>
+  Will output the following CSS:
+</div>
 
-<CodeBlock mixinName={`font`}>
-  font-family: Georgia, 'Times New Roman', Times, serif;
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`font`}>
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  </CodeBlock>
+</div>

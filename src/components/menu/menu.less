@@ -76,10 +76,10 @@
   // #border.solid(bottom, 4px, @color[graylight]);
   // background-color: darken(@color-01, 10%);
   margin-bottom: 4px;
-  #gradient.linear(left, @color[secondary], darken(@color-01, 10%));
+  #gradient.linear(left, @color[secondary], darken(@color[primary], 20%));
 
   &:hover,
   &--active {
-    #gradient.linear(left, lighten(@color[primary], 10%), @color[primary]);
+    #gradient.linear(left, lighten(@color[primary], 15%), @color[primary]);
   }
 }

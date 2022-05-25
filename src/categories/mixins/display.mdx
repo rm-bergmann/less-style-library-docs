@@ -5,6 +5,7 @@ category: mixins
 description: A wide range of various display mixins
 ---
 
+import { Link } from 'gatsby';
 import CodeBlock from '../../components/codeBlock/codeBlock';
 
 ### Display mixins currently supported:
@@ -18,124 +19,347 @@ import CodeBlock from '../../components/codeBlock/codeBlock';
 * mobile
 * tablet
 * desktop
-* webkit-delay
 
-Apply this mixin to the parent element which will align children from left to right with equal spacing.
+## Flexbox Displays:
+### Apply these mixins to the flexbox parent element
 
-<CodeBlock mixinName={`display`}>
-  #display.flex(space);
-</CodeBlock>
+<div className={`code-block__description`}>
+  Apply this mixin to the parent element which will align children from left to right 
+  with equal spacing.
+</div>
 
-To align children to left (start) or right (end) of a container apply the following mixin to the container element
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.flex(space);
+  </CodeBlock>
 
-<CodeBlock mixinName={`display`}>
-  #display.flex(start);
-</CodeBlock>
+  <div className="display display--01">
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+  </div>
+</div>
 
-<CodeBlock mixinName={`display`}>
-  #display.flex(end);
-</CodeBlock>
+<div className={`code-block__description`}>
+  To align children to left (start) or right (end) of a container apply the following 
+  mixin to the container element.
+</div>
 
-For a Grid like flexbox (works well for IE 11 as a flexbox fallback):
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.flex(start);
+  </CodeBlock>
 
-<CodeBlock mixinName={`display`}>
-  #display.flex(grid);
-</CodeBlock>
+  <div className="display display--02">
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+  </div>
+</div>
 
-## CSS Grid
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.flex(end);
+  </CodeBlock>
 
-### Apply these mixins to the grid container element
+  <div className="display display--03">
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+  </div>
+</div>
 
-Default: 12 columns, 20px Gap, 1 row auto height
+<div className={`code-block__description`}>
+  For a Grid like flexbox (works well for IE 11 as a flexbox fallback):
+</div>
 
-<CodeBlock mixinName={`grid`}>
-  #display.grid();
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.flex(grid);
+  </CodeBlock>
 
-4 column grid, 40px gap, 4 rows, 40px row height
+  <div className="display display--04">
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+  </div>
+</div>
 
-<CodeBlock mixinName={`grid`}>
-  #display.grid(4, 40px, 4, 40px);
-</CodeBlock>
+## CSS Grid Displays
 
-16 column grid, 10px gap, 2 rows, 100px row height
+### Apply these mixins to the grid parent element 
 
-<CodeBlock mixinName={`grid`}>
-  #display.grid(16, 10px, 2, 100px);
-</CodeBlock>
+<div className={`code-block__description`}>
+  Values currently supported and default values include:
+  <p>&nbsp;</p>
 
-We can also justify content, justify items and align items all in the center like this:
+  * Number of columns (12)
+  * Gap value (20px)
+  * Number of rows (1)
+  * Row Height (auto)
 
-<CodeBlock mixinName={`grid`}>
-  #display.grid(center, 16, 10px, 2, 100px);
-</CodeBlock>
+</div>
 
-You can also try stretch items
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #display.grid(@columns, @gap, @rows, @row-height);
+  </CodeBlock>
+</div>
 
-<CodeBlock mixinName={`grid`}>
-  #display.grid(stretch, 16, 10px, 2, 100px);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    {`grid-template-columns: repeat(12, 1fr);
+grid-template-rows: repeat(1, auto);
+gap: 20px;`}
+  </CodeBlock>
+</div>
 
-## Colours
+<div className="display display--05">
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+  <div className="display__child"></div>
+</div>
 
-To minimize common repeatition, this mixin takes color as the first param and background-color as the second param.
-By default color is set to black and background color set to white. Pass in the colours of your choice.
+<div className={`code-block__description`}>
+  4 column grid, 40px gap, 4 rows, 40px row height
+</div>
 
-<CodeBlock mixinName={`display`}>
-  #display.colors();
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #display.grid(4, 10px, 2, 50px);
+  </CodeBlock>
 
-<CodeBlock mixinName={`display`}>
-  #display.colors(white, blue);
-</CodeBlock>
+  <div className="display display--06">
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+  </div>
+</div>
 
-Width and height are common styles to add to elements, use this mixin if width and height are different values:
-The first param is the width value, the second param is the hight value:
+<div className={`code-block__description`}>
+  We can also justify content, justify items and align items all in the center like this:
+</div>
 
-<CodeBlock mixinName={`display`}>
-  #display.dimensions(200px, 50px);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #display.grid(center, 3, 10px, auto);
+  </CodeBlock>
 
-If the width and height are the same values pass in the type 'equal', then the desired value (default is set to 100px)
+  <div className="display display--07">
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+    <div className="display__child"></div>
+  </div>
+</div>
 
-<CodeBlock mixinName={`display`}>
-  #display.dimensions(equal, 200px);
-</CodeBlock>
+## Color Display
 
-When you float an element's children left or right, apply this mixin so the parent can retain it's height:
+<div className={`code-block__description`}>
+  To minimize common repeatition, this mixin takes color as the first parameter and 
+  background-color as the second parameter. By default, color is set to black and 
+  background color set to white.
+</div>
 
-<CodeBlock mixinName={`display`}>
-  #display.clearfix();
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.colors(@color, @background-color);
+  </CodeBlock>
 
+  <div className="display display--08">Text Colour</div>
+</div>
 
-When you target the :before and :after pseudo elements apply this mixin to display it.
-This adds the following styles: display: block; content: '';
-You can change the content value by passing it in:
+<div className={`code-block__description`}>
+  To customize the values pass in the color and background-color of choice which will
+  replace the defaults. In this case, the @color[secondary] value is set to the 
+  background-color.
+</div>
 
-<CodeBlock mixinName={`display`}>
-  #display.pseudo();
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.colors(white, @color[secondary]);
+  </CodeBlock>
 
-<CodeBlock mixinName={`display`}>
-  #display.pseudo('&raquo;');
-</CodeBlock>
+  <div className="display display--09">Text Colour</div>
+</div>
 
+<br />
 
-If you want to show / hide on specific devices you can use these mixins, as they will take care of the media queries:
+## Dimension Display
 
-<CodeBlock mixinName={`display`}>
-  #display.mobile();
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.dimensions(@width, @height);
+  </CodeBlock>
 
-<CodeBlock mixinName={`display`}>
-  #display.tablet();
-</CodeBlock>
+  <div className="display display-secondary display--10" />
+</div>
 
-<CodeBlock mixinName={`display`}>
-  #display.desktop();
-</CodeBlock>
+<div className={`code-block__description`}>
+  Width and height values are regularly added to elements. Use this mixin to set a 
+  width and height to an element. The default values are:
+  <p>&nbsp;</p>
+  
+  <CodeBlock mixinName={`display`}>
+    {`width: 100px;
+height: 100px;`}
+  </CodeBlock>
+</div>
 
-<CodeBlock mixinName={`display`}>
-  #display.webkit-delay();
-</CodeBlock>
+<div className={`code-block__description`}>
+  To customize pass in the desired width value as the first paramater and height
+  value as the second parameter. 
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.dimensions(200px, 50px);
+  </CodeBlock>
+
+  <div className="display display-secondary display--11" />
+</div>
+
+<div className={`code-block__description`}>
+  If the width and height are the same values pass in the type 'equal', then the 
+  desired value (default is set to 100px)
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.dimensions(equal, 120px);
+  </CodeBlock>
+
+  <div className="display display-secondary display--12" />
+</div>
+
+## Clearfix
+
+<div className={`code-block__description`}>
+  When floating an element's children left or right, apply this mixin so the parent 
+  can retain it's height:
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.clearfix();
+  </CodeBlock>
+
+  <div className="display display--13">
+    <div className="display__child display__child-left"></div>
+    <div className="display__child display__child-right"></div>
+  </div>
+</div>
+
+## No Space
+
+<div className={`code-block__description`}>
+  It is common to zero out margin and padding from elements, this mixin is a 1 liner 
+  to do the job. Currently, the 0 values cannot be adjusted, but it is likely in an 
+  future version there will be a new mixin to handle margin and padding values.
+  <p>&nbsp;</p>
+
+  <CodeBlock mixinName={`display`}>
+    {`margin: 0;
+padding: 0`}
+  </CodeBlock>
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.no-space();
+  </CodeBlock>
+</div>
+
+## Pseudo Element
+
+<div className={`code-block__description`}>
+  When targeting the ::before and ::after pseudo elements apply this mixin to 
+  display the Pseudo element with the content value. By default the following
+  styles are added:
+
+  <div className="code-block">
+    <CodeBlock mixinName={`display`}>
+      {`display: block; 
+content: '';`}
+    </CodeBlock>
+  </div>
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.pseudo(@content, @type);
+  </CodeBlock>
+</div>
+
+<div className={`code-block__description`}>
+  In this example below the ::after pseudo element was targeted, and a 
+  right angle quote character has been placed inside of it. Additionally, 
+  a width and height value was added with a mixin. 
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    {`#display.pseudo('›', inline);
+#display.dimensions(equal, 16px)`}
+  </CodeBlock>
+
+  <div className="display display--14"><span>Some Text</span></div>
+</div>
+
+<br />
+
+## Viewport Display
+
+<div className={`code-block__description`}>
+  Useful mixins when an element should be hidden by default and displayed on 
+  certain viewport widths or devices. The media query viewport width values are 
+  the values defined in the <Link to={`/variables/breakpoints`}>Breakpoints Variables</Link>
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.mobile();
+  </CodeBlock>
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.tablet();
+  </CodeBlock>
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.laptop();
+  </CodeBlock>
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`display`}>
+    #display.desktop();
+  </CodeBlock>
+</div>
