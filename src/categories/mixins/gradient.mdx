@@ -6,37 +6,69 @@ description: Gradient mixins make it easy to write gradients in CSS
 ---
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
+import Gradient from '../../components/gradient/gradient';
 
-Gradient styles are based on the following naming pattern
+## Gradients
 
-<CodeBlock mixinName={`gradient`}>
-  #gradient.gradient-type(position, first-color, last-color);
-</CodeBlock>
+<div className={`code-block__description`}>
+  Gradient styles are based on the following naming pattern
+</div>
 
-Default: @color-01, @color-02, to bottom
-Default Linear Gradient (Bottom)
+<div className="code-block">
+  <CodeBlock mixinName={`gradient`}>
+    #gradient.gradient-type(position, first-color, last-color);
+  </CodeBlock>
+</div>
 
-<CodeBlock mixinName={`gradient`} number={`01`}>
-  #gradient.linear(); 
-</CodeBlock>
+<div className={`code-block__description`}>
+  Default: @color-01, @color-02, to bottom
+  Default Linear Gradient (Bottom)
+</div>
 
 
-Default Linear Gradient (Top)
+<div className="code-block">
+  <CodeBlock mixinName={`gradient`} number={`01`}>
+    #gradient.linear(); 
+  </CodeBlock>
 
-<CodeBlock mixinName={`gradient`} number={`02`}>
-  #gradient.linear(top); 
-</CodeBlock>
+  <Gradient index={`01`} />
+</div>
 
-Default Blue to Right Gradient
 
-<CodeBlock mixinName={`gradient`} number={`03`}>
-  #gradient.linear(right, @blue-light, @blue); 
-</CodeBlock>
+<div className={`code-block__description`}>
+  Default Linear Gradient (Top)
+</div>
 
-Default Orange to Left Gradient
+<div className="code-block">
+  <CodeBlock mixinName={`gradient`} number={`02`}>
+    #gradient.linear(top); 
+  </CodeBlock>
 
-<CodeBlock mixinName={`gradient`} number={`04`}>
-  #gradient.linear(left, @orange, @orange-light);
-</CodeBlock>
+  <Gradient index={`02`} />
+</div>
+
+<div className={`code-block__description`}>
+  Default Blue to Right Gradient
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`gradient`} number={`03`}>
+    #gradient.linear(right, @blue-light, @blue); 
+  </CodeBlock>
+
+  <Gradient index={`03`} />
+</div>
+
+<div className={`code-block__description`}>
+  Default Orange to Left Gradient
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`gradient`} number={`04`}>
+    #gradient.linear(left, @orange, @orange-light);
+  </CodeBlock>
+
+  <Gradient index={`04`} />
+</div>
 
 

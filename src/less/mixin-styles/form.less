@@ -1,47 +1,53 @@
 .form {
   width: 100%;
-  
+
   &-container {
-    margin: 2rem 0;
-  }
-  
-  &-label {
-    #form.label();
+    margin: 0 auto 0 2rem;
   }
 
-  &-input {
-    
-    &-01 {
+  &__label {
+
+    &--01 {
+      #form.label();
+    }
+
+    &--02 {
+      #form.label(20px, 600, @color[secondary]);
+    }
+  }
+
+  &__input {
+
+    &--01 {
       #form.input();
     }
-       
-    &-03 {
+
+    &--02 {
       #form.input(rounded);
     }
-    
-    &-04 {
+
+    &--03 {
       #form.input(dark);
     }
-    
-    &-05 {
+
+    &--04 {
       #form.input(dark-rounded);
     }
   }
 
-  &-select {
+  &__select {
 
-    &--default {
+    &--01 {
       #form.select();
     }
 
-    &--rounded {
+    &--02 {
       #form.select(rounded);
     }
   }
-  
-  &-textarea {
+
+  &__textarea {
     #form.textarea();
   }
-  
-}
 
+}

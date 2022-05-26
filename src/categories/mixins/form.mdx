@@ -8,9 +8,11 @@ description: Improves default browser form input, label, select and textarea sty
 import CodeBlock from '../../components/codeBlock/codeBlock';
 import FormSelect from '../../components/formSelect/formSelect';
 
-<CodeBlock mixinName={`form`}>
-  #form.form-element(options);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.form-element(options);
+  </CodeBlock>
+</div>
 
 * Useful to use as a starting point when designing the element styles
 * Form elements currently supported are **label**, **input**, **select** and **textarea**
@@ -20,120 +22,165 @@ import FormSelect from '../../components/formSelect/formSelect';
 
 ## Label
 
-Browser default label:
+<div className={`code-block__description`}>
+  To style a label element use the following mixin. This mixin accepts
+  3 parameters with the following default values:
 
-<div className="form-container">
-  <label>Default Label Style</label>
+  <p>&nbsp;</p>
+
+  <CodeBlock mixinName={`form`}>
+    {`font-size: 1.2rem;
+font-weight: 700;
+color: @color[primary];`}
+  </CodeBlock>
 </div>
 
-Label Mixin Style:
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.label(@size, @weight, @color);
+  </CodeBlock>
 
-<CodeBlock mixinName={`form`}>
-  #form.label();
-</CodeBlock>
-
-<div className="form-container">
-  <label className="form-examples--label" htmlFor="text-input">
-    Form Label
-  </label>
+  <div className="form-container">
+    <label className="form__label--01" htmlFor="text-input">
+      Form Label
+    </label>
+  </div>
 </div>
 
-
-<CodeBlock mixinName={`form`}>
-  #form.input();
-</CodeBlock>
-
-<div className="form-container">
-  <input
-    className="form-examples--input form-examples--input---01"
-    placeholder="Enter Text"
-  />
+<div className={`code-block__description`}>
+  To customize adjust the values, for example:
 </div>
 
-<CodeBlock mixinName={`form`}>
-  #input.default(rounded);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.label(18px, 400, @color[secondary]);
+  </CodeBlock>
 
-<CodeBlock mixinName={`form`}>
-  #input.default(dark);
-</CodeBlock>
+  <div className="form-container">
+    <label className="form__label--02" htmlFor="text-input">
+      Form Label
+    </label>
+  </div>
+</div>
 
-<CodeBlock mixinName={`form`}>
-  #input.default(dark-rounded);
-</CodeBlock>
+## Input
 
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.input(@type);
+  </CodeBlock>
+</div>
 
-<div className="form-container">
-  <label className="form-examples--label---bold" htmlFor="text-input-02">
-    Form Label
+<div className={`code-block__description`}>
+  This library currently includes 4 types of text input styles:
+</div>
+
+* Default
+* Rounded 
+* Dark
+* Dark Rounded
+
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.input();
+  </CodeBlock>
+
+  <div className="form-container">
     <input
-      className="form-examples--input form-examples--input-02"
-      id="text-input-02"
+      className="form__input--01"
       placeholder="Enter Text"
     />
-  </label>
+  </div>
 </div>
 
-<div className="form-container">
-  <input
-    className="form-examples--input form-examples--input-03"
-    placeholder="Enter Text"
-  />
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.input(rounded);
+  </CodeBlock>
+
+  <div className="form-container">
+    <input
+      className="form__input--02"
+      placeholder="Enter Text"
+    />
+  </div>
 </div>
 
-<div className="form-container">
-  <input
-    className="form-examples--input form-examples--input-04"
-    placeholder="Enter Text"
-  />
+
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.input(dark);
+  </CodeBlock>
+
+  <div className="form-container">
+    <input
+      className="form__input--03"
+      placeholder="Enter Text"
+    />
+  </div>
 </div>
 
-<div className="form-container">
-  <input
-    className="form-examples--input form-examples--input-05"
-    placeholder="Enter Text"
-  />
+
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.input(dark-rounded);
+  </CodeBlock>
+
+  <div className="form-container">
+    <input
+      className="form__input--04"
+      placeholder="Enter Text"
+    />
+  </div>
 </div>
+
 
 ---
 
 ## Select
 
-Browser default select:
+<div className={`code-block__description`}>
+  Select Element default style:
+</div>
 
-<FormSelect />
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.select();
+  </CodeBlock>
 
-Select Element default style:
+  <FormSelect selectClassName="form__select--01" />
+</div>
 
-<FormSelect selectClassName="form-select--default" />
+<div className={`code-block__description`}>
+  Select Element style with radius:
+</div>
 
-<CodeBlock mixinName={`form`}>
-  #form.select();
-</CodeBlock>
-      
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.select(rounded);
+  </CodeBlock>
 
-### Select Element style with radius:
-
-<FormSelect selectClassName="form-select--rounded" />
-
-<CodeBlock mixinName={`form`}>
-  #form.select(rounded);
-</CodeBlock>
+  <FormSelect selectClassName="form__select--02" />
+</div>
 
 ---
 
 ## Textarea
 
-Browser default textarea styles are plain and unatractive:
-
-<textarea  />
-
-Using the mixin below, you can instatly size it so it's more visible
-
-<CodeBlock mixinName={`form`}>
-  #form.textarea();
-</CodeBlock>
-
-<div className="form-container">
-  <textarea className="form-textarea" />
+<div className={`code-block__description`}>
+  Browser default textarea styles are plain and unatractive. 
+  Using the mixin below, you can instatly size it so it's more 
+  visible.
 </div>
+
+
+<div className="code-block">
+  <CodeBlock mixinName={`form`}>
+    #form.textarea();
+  </CodeBlock>
+
+  <div className="form-container">
+    <textarea className="form__textarea" />
+  </div>
+</div>
+
