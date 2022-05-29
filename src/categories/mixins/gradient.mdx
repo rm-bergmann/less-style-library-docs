@@ -11,20 +11,36 @@ import Gradient from '../../components/gradient/gradient';
 ## Gradients
 
 <div className={`code-block__description`}>
-  Gradient styles are based on the following naming pattern
+  Gradient styles are based on the following naming pattern:
 </div>
 
 <div className="code-block">
-  <CodeBlock mixinName={`gradient`}>
-    #gradient.gradient-type(position, first-color, last-color);
+  <CodeBlock mixinName={`gradient`} number={`01`}>
+    #gradient.gradient-type(@direction, @from-color, @to-color)
   </CodeBlock>
 </div>
 
 <div className={`code-block__description`}>
-  Default: @color-01, @color-02, to bottom
-  Default Linear Gradient (Bottom)
+  gradient-types currently supported:
 </div>
 
+* linear
+* radial
+
+<div className={`code-block__description`}>
+  @direction is optional, by default it is set as 'to bottom'.
+  linear gradient supports the following directions:
+</div>
+
+* top  (to top)
+* left (to left)
+* right (to right)
+
+<div className={`code-block__description`}>
+  @from-color is set to @color[primary]
+  <br />
+  @to-color is set to @color[secondary]
+</div>
 
 <div className="code-block">
   <CodeBlock mixinName={`gradient`} number={`01`}>
@@ -71,4 +87,15 @@ import Gradient from '../../components/gradient/gradient';
   <Gradient index={`04`} />
 </div>
 
+<div className={`code-block__description`}>
+  For radial gradients use the following mixin:
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`gradient`} number={`04`}>
+    #gradient.radial();
+  </CodeBlock>
+
+  <Gradient index={`05`} />
+</div>
 
