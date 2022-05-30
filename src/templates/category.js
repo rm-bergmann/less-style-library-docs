@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Menu from '../components/menu/menu';
+import Menu from '../components/layoutComponents/menu/menu';
 
 export default function mixin({ pageContext: { node, documentationLinks, mixinLinks, variablesLinks } }) {
   const { frontmatter, body } = node;

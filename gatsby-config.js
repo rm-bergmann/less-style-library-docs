@@ -68,5 +68,11 @@ module.exports = {
         path: "./src/categories/variables",
       },
     },
+    {
+      resolve: `gatsby-plugin-minify`,
+      options: {
+        // removeStyleLinkTypeAttributes: false,
+      }
+    },
   ],
 };

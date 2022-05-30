@@ -9,66 +9,102 @@ import CodeBlock from '../../components/codeBlock/codeBlock';
 
 ### Apply these grid mixins to the grid items inside the grid cotainer:
 
-Default will start at column 1 and end at column 12.
+<div className={`code-block__description`}>
+  Default will start at column 1 and end at column 12.
+</div>
 
-<CodeBlock mixinName={`grid`}>
-  #grid.column();
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.column();
+  </CodeBlock>
+</div>
 
-You can customize your start / end points by specifying them.
-Lets say we want to start at column 2 and end at column 4:
+<div className={`code-block__description`}>
+  You can customize your start / end points by specifying them.
+  Lets say we want to start at column 2 and end at column 4:
+</div>
 
-<CodeBlock mixinName={`grid`}>
-  #grid.column(2, 4);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.column(2, 4);
+  </CodeBlock>
+</div>
 
-We can also specify the row start / row end like this:
-Default will start at row 1 and end at row 2, but we can speficy any row start and end points:
+<div className={`code-block__description`}>
+  We can also specify the row start / row end like this:
+  Default will start at row 1 and end at row 2, but we can speficy any row start and end points:
+</div>
 
-<CodeBlock mixinName={`grid`}>
-  #grid.row();
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.row();
+  </CodeBlock>
+</div>
 
-<CodeBlock mixinName={`grid`}>
-  #grid.row(3, 5);
-</CodeBlock>
-  
-If you want an element to span across the whole row from left to right use this mixin:
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.row(3, 5);
+  </CodeBlock>
+</div>
 
-<CodeBlock mixinName={`grid`}>
-   #grid.column(across);
-</CodeBlock>
+<div className={`code-block__description`}>
+  If you want an element to span across the whole row from left to right use this mixin:
+</div>
 
-If that does not work, you can specify how many columns to span by.
-Default starts at column 1 and spans 12 columns.
-You can speicfy the start columns and the amount of columns you want to span by. Lets start at column 2 and span 6:
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.column(across);
+  </CodeBlock>
+</div>
 
-<CodeBlock mixinName={`grid`}>
-   #grid.column(span);
-</CodeBlock>
+<div className={`code-block__description`}>
+  If that does not work, you can specify how many columns to span by.
+  Default starts at column 1 and spans 12 columns.
+  You can speicfy the start columns and the amount of columns you want to span by. Lets start at column 2 and span 6:
+</div>
 
-<CodeBlock mixinName={`grid`}>
-   #grid.column(span, 2, 6);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.column(span);
+  </CodeBlock>
+</div>
 
-When designing responsive sites we may have columns stacked on top of eachother on mobile devices,
-and beside eachother on tablet devices and desktop screens. I have designed some customizeable mixins which
-do this work for you.
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.column(span, 2, 6);
+  </CodeBlock>
+</div>
 
-By default, on tablet and desktop devices we start at column 1 and span 2.
-We can specify the start column and amount to span the element by. Lets start at column 6 and span 4:
+<div className={`code-block__description`}>
+  When designing responsive sites we may have columns stacked on top of eachother 
+  on mobile devices, and beside eachother on tablet devices and desktop screens. 
+  I have designed some customizeable mixins which do this work for you.
 
-<CodeBlock mixinName={`grid`}>
-   #grid.column(responsive);
-</CodeBlock>
+  <p>&nbsp;</p>
+  By default, on tablet and desktop devices we start at column 1 and span 2.
+  We can specify the start column and amount to span the element by. 
+  Lets start at column 6 and span 4:
+</div>
 
-<CodeBlock mixinName={`grid`}>
-  #grid.column(responsive, 6, 4);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.column(responsive);
+  </CodeBlock>
+</div>
 
-Useful mixin to change both Grid column and row gaps at the same time.
-Both column and row gaps must have the same value.
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.column(responsive, 6, 4);
+  </CodeBlock>
+</div>
 
-<CodeBlock mixinName={`grid`}>
-  #grid.gap(20px);
-</CodeBlock>
+<div className={`code-block__description`}>
+  Useful mixin to change both Grid column and row gaps at the same time.
+  Both column and row gaps must have the same value.
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.gap(20px);
+  </CodeBlock>
+</div>

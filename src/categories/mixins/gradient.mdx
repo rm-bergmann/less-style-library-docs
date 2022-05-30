@@ -2,20 +2,20 @@
 title: Gradient
 slug: gradient
 category: mixins
-description: Gradient mixins make it easy to write gradients in CSS
+description: Gradient mixins make it easier to write simple gradients in CSS
 ---
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
 import Gradient from '../../components/gradient/gradient';
 
-## Gradients
+## Linear Gradients
 
 <div className={`code-block__description`}>
   Gradient styles are based on the following naming pattern:
 </div>
 
 <div className="code-block">
-  <CodeBlock mixinName={`gradient`} number={`01`}>
+  <CodeBlock>
     #gradient.gradient-type(@direction, @from-color, @to-color)
   </CodeBlock>
 </div>
@@ -43,7 +43,7 @@ import Gradient from '../../components/gradient/gradient';
 </div>
 
 <div className="code-block">
-  <CodeBlock mixinName={`gradient`} number={`01`}>
+  <CodeBlock mixinName={`gradient`}>
     #gradient.linear(); 
   </CodeBlock>
 
@@ -56,7 +56,7 @@ import Gradient from '../../components/gradient/gradient';
 </div>
 
 <div className="code-block">
-  <CodeBlock mixinName={`gradient`} number={`02`}>
+  <CodeBlock mixinName={`gradient`}>
     #gradient.linear(top); 
   </CodeBlock>
 
@@ -68,8 +68,8 @@ import Gradient from '../../components/gradient/gradient';
 </div>
 
 <div className="code-block">
-  <CodeBlock mixinName={`gradient`} number={`03`}>
-    #gradient.linear(right, @blue-light, @blue); 
+  <CodeBlock>
+    #gradient.linear(right, @forest-green, @mint-green);
   </CodeBlock>
 
   <Gradient index={`03`} />
@@ -80,11 +80,20 @@ import Gradient from '../../components/gradient/gradient';
 </div>
 
 <div className="code-block">
-  <CodeBlock mixinName={`gradient`} number={`04`}>
-    #gradient.linear(left, @orange, @orange-light);
+  <CodeBlock>
+    #gradient.linear(left, @forest-green, @mint-green);
   </CodeBlock>
 
   <Gradient index={`04`} />
+</div>
+
+
+## Radial Gradients
+
+<div className="code-block">
+  <CodeBlock>
+    #gradient.radial(@from-color, @to-color);
+  </CodeBlock>
 </div>
 
 <div className={`code-block__description`}>
@@ -92,10 +101,21 @@ import Gradient from '../../components/gradient/gradient';
 </div>
 
 <div className="code-block">
-  <CodeBlock mixinName={`gradient`} number={`04`}>
+  <CodeBlock>
     #gradient.radial();
   </CodeBlock>
 
   <Gradient index={`05`} />
 </div>
 
+<div className={`code-block__description`}>
+  To customize the gradient colors pass them in as parameters
+</div>
+
+<div className="code-block">
+  <CodeBlock>
+    #gradient.radial(@apricot, @vermilion);
+  </CodeBlock>
+
+  <Gradient index={`06`} />
+</div>

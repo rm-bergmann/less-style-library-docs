@@ -79,7 +79,8 @@
   #gradient.linear(left, @color[secondary], darken(@color[primary], 20%));
 
   &:hover,
+  &:focus,
   &--active {
-    #gradient.linear(left, lighten(@color[primary], 15%), @color[primary]);
+    #gradient.linear(left, lighten(@color[primary], 15%), darken(@color[primary], 10%));
   }
 }

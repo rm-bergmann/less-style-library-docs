@@ -9,18 +9,51 @@ import CodeBlock from '../../components/codeBlock/codeBlock';
 
 Install into your project using yarn or npm.
 
-<CodeBlock mixinName={`installation`}>
-  $ npm install less-style-library --save-dev
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock>
+    npm install less-style-library --save-dev
+  </CodeBlock>
+</div>
 
-<CodeBlock mixinName={`installation`}>
-  $ yarn add less-style-library
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock>
+    yarn add less-style-library
+  </CodeBlock>
+</div>
 
-Import the library using a less / css import statement. This should be imported
-before all other less files in your project so that you can override any predefined
-variables and settings if needed.
+<div className={`code-block__description`}>
+  Import the library using a less / css import statement. This should be imported
+  before all other less files in your project so that you can override any predefined
+  variables and settings if needed.
+</div>
 
-<CodeBlock mixinName={`installation`}>
-  @import './node_modules/less-style-library/imports.less';
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock>
+    @import './node_modules/less-style-library/imports.less';
+  </CodeBlock>
+</div>
+
+## Using with React or similar component architecture
+
+### Option 1  
+
+<div className={`code-block__description`}>
+  In the app index.js file you can import a style.less file, which imports this 
+  library. The style.less file can automatically import each component.less file
+  which compiles a css file that is linked to the application html files.
+</div>  
+
+### Option 2  
+
+<div className={`code-block__description`}>
+  The method above is great for stylesheet evaluation as a whole, but there is a 
+  slight disadvantage as the compiled stylesheet will have all styles for all pages
+  in a website or application, so large stylesheets could cause a slight performnce 
+  setback on the first pageload. Once the stylesheet is cached in the browser pageload
+  performance is fine. This is mostly useful for a layout.css file which is needed on 
+  all pages of a website. React Frameworks like Next JS and Gatsby can compile static html files in a way where
+  each page only loads the css needed for the page. To use this library with that type
+  of architecture the library would need to be imported in each component where a mixin
+  or variable from this library is used. That would be teadious to do manually. To automatically import the library in all React components you would need to write
+  a custom webpack loader that automatically imports the library. 
+</div>

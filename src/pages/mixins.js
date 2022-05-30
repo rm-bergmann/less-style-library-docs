@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import Menu from '../components/menu/menu';
+import Menu from '../components/layoutComponents/menu/menu';
 
 export const query = graphql`
   query getMixinnData {
