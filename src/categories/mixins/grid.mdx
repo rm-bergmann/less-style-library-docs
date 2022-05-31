@@ -2,32 +2,55 @@
 title: Grid
 slug: grid
 category: mixins
-description: Makes it easy to add Grid rules
+description: Simplifies adding Grid Column and Row values
 ---
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
+import GridItem from '../../components/gridItem/gridItem';
 
 ### Apply these grid mixins to the grid items inside the grid cotainer:
 
 <div className={`code-block__description`}>
-  Default will start at column 1 and end at column 12.
+  Grid Mixins are applied to children elements where the parent element is set with
+  display: grid
+
+  Grid item mixins currently support columns and rows, where you can define how the 
+  grid items are displayed within the grid.
+  
+  The Grid Item column default will start at column 1 and end at column 13.
 </div>
 
 <div className="code-block">
   <CodeBlock mixinName={`grid`}>
     #grid.column();
   </CodeBlock>
+
+  <GridItem index={`01`} />
 </div>
 
 <div className={`code-block__description`}>
   You can customize your start / end points by specifying them.
-  Lets say we want to start at column 2 and end at column 4:
+  Lets say we want to start at column 2 and end at column 8:
 </div>
 
 <div className="code-block">
   <CodeBlock mixinName={`grid`}>
     #grid.column(2, 4);
   </CodeBlock>
+
+  <GridItem index={`02`} />
+</div>
+
+<div className={`code-block__description`}>
+  Another way to
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.column(across);
+  </CodeBlock>
+
+  <GridItem index={`03`} />
 </div>
 
 <div className={`code-block__description`}>

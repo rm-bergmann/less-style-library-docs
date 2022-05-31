@@ -1,0 +1,27 @@
+.grid {
+  align-items: center;
+  justify-content: center;
+  background-color: @color[graylight];
+  margin-left: auto;
+  border-radius: @settings[radius];
+  #border.solid(2px, @color[primary]);
+  #display.dimensions(220px, 60px);
+  #display.grid();
+
+  &__item {
+    background-color: @color[secondary];
+    #display.dimensions(auto, 50px);
+
+    &--01 {
+      #grid.column();
+    }
+
+    &--02 {
+      #grid.column(2, 8);
+    }
+
+    &--03 {
+      #grid.column(across);
+    }
+  }
+}
