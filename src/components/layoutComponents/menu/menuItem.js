@@ -14,10 +14,6 @@ const MenuItem = ({ menuItems }) => {
   const renderLinks = menuItemValues.map(menuItem => {
     const { linkText, linkRoute } = menuItem;
 
-    if (linkText === 'About') {
-      partiallyActive = false;
-    }
-
     return (
       <li key={linkText} className={itemClassName}>
         <Link

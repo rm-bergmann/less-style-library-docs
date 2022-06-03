@@ -37,11 +37,11 @@ const VariablesPage = ({ data }) => {
       <Menu menuType={`sub`} menuItems={variablesLinks} />
       <section className={`layout__description`}>
         <h1>Variables</h1>
-        <p>Predefined variables ready to use for colours and breakpoints.</p>
+        <p>This library includes variables ready to use for color names and
+          breakpoints for Media queries.
+        </p>
       </section>
-      <aside className={`layout__side`}>
-
-      </aside>
+      <aside className={`layout__side`} />
     </>
   );
 }

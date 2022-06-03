@@ -8,21 +8,57 @@ description: Simplifies adding Grid Column and Row values
 import CodeBlock from '../../components/codeBlock/codeBlock';
 import GridItem from '../../components/gridItem/gridItem';
 
-### Apply these grid mixins to the grid items inside the grid cotainer:
+There are 2 namespaced grid mixins:
+
+* column
+  * horizontal
+  * span
+  * responsive
+* row
+  * span
+  * vertical
+
+These mixins should be appled to children elements of a grid container
 
 <div className={`code-block__description`}>
-  Grid Mixins are applied to children elements where the parent element is set with
-  display: grid
+  Grid Mixins are applied to children elements where the parent element is set with:
 
+  <div className="code-block">
+    <CodeBlock mixinName={`grid`}>
+      display: grid;
+    </CodeBlock>
+  </div>
+
+  In the following examples, the HTML structure is set up with a parent div and 13
+  children divs. The parent element has the following mixin applied 
+  which sets a 6 column grid, with 4px gap, 2 rows with a height of 50px:
+
+  <div className="code-block">
+    <CodeBlock mixinName={`grid`}>
+      #display.grid(6, 4, 2, 50px);
+    </CodeBlock>
+  </div>
+</div>
+
+## Grid Column
+
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.column(@type, @start, @end);
+  </CodeBlock>
+</div>
+
+<div className={`code-block__description`}>
   Grid item mixins currently support columns and rows, where you can define how the 
-  grid items are displayed within the grid.
+  grid items are displayed within the grid. In the following examples the first child 
+  div has these mixins applied to it.
   
   The Grid Item column default will start at column 1 and end at column 13.
 </div>
 
 <div className="code-block">
   <CodeBlock mixinName={`grid`}>
-    #grid.column();
+    #grid.column(1, 7);
   </CodeBlock>
 
   <GridItem index={`01`} />
@@ -42,92 +78,145 @@ import GridItem from '../../components/gridItem/gridItem';
 </div>
 
 <div className={`code-block__description`}>
-  Another way to
+  An alternative way to set a grid item element to span across all columns is 
+  to set the first parameter to 'horizontal' so the element starts at column 1 
+  and ends at -1 which is the last column.
 </div>
 
 <div className="code-block">
   <CodeBlock mixinName={`grid`}>
-    #grid.column(across);
+    #grid.column(horizontal);
   </CodeBlock>
 
   <GridItem index={`03`} />
 </div>
 
 <div className={`code-block__description`}>
-  We can also specify the row start / row end like this:
-  Default will start at row 1 and end at row 2, but we can speficy any row start and end points:
-</div>
-
-<div className="code-block">
-  <CodeBlock mixinName={`grid`}>
-    #grid.row();
-  </CodeBlock>
-</div>
-
-<div className="code-block">
-  <CodeBlock mixinName={`grid`}>
-    #grid.row(3, 5);
-  </CodeBlock>
-</div>
-
-<div className={`code-block__description`}>
-  If you want an element to span across the whole row from left to right use this mixin:
-</div>
-
-<div className="code-block">
-  <CodeBlock mixinName={`grid`}>
-    #grid.column(across);
-  </CodeBlock>
-</div>
-
-<div className={`code-block__description`}>
-  If that does not work, you can specify how many columns to span by.
-  Default starts at column 1 and spans 12 columns.
-  You can speicfy the start columns and the amount of columns you want to span by. Lets start at column 2 and span 6:
+  To span a column we can use the span type. By default it will start at 
+  column 1 and span across 12 columns. 
 </div>
 
 <div className="code-block">
   <CodeBlock mixinName={`grid`}>
     #grid.column(span);
   </CodeBlock>
+
+  <GridItem index={`04`} />
+</div>
+
+<div className={`code-block__description`}>
+  You can speicfy the start columns and the amount of columns you want to span by. 
+  Lets start at column 2 and span across 3 columns:
 </div>
 
 <div className="code-block">
   <CodeBlock mixinName={`grid`}>
-    #grid.column(span, 2, 6);
+    #grid.column(span, 2, 3);
   </CodeBlock>
+
+  <GridItem index={`05`} />
 </div>
+
 
 <div className={`code-block__description`}>
   When designing responsive sites we may have columns stacked on top of eachother 
-  on mobile devices, and beside eachother on tablet devices and desktop screens. 
-  I have designed some customizeable mixins which do this work for you.
-
+  on mobile devices, and beside eachother on tablet devices and desktop screens.
+  The responsive type grid column mixin can be used to span across all columns on 
+  mobile viewports and span across a set number of columns on tablet and desktop
+  viewports. By default it will span 2 columns. 
   <p>&nbsp;</p>
-  By default, on tablet and desktop devices we start at column 1 and span 2.
-  We can specify the start column and amount to span the element by. 
-  Lets start at column 6 and span 4:
+
+  Note: To see the responsive effect you will need to resize your browser viewport
 </div>
 
 <div className="code-block">
   <CodeBlock mixinName={`grid`}>
     #grid.column(responsive);
   </CodeBlock>
+
+  <GridItem index={`06`} />
+</div>
+
+<div className={`code-block__description`}>
+  To specify the start column and amount to span the element by, pass the values 
+  in as parameters. Lets start at column 6 and span 4:
 </div>
 
 <div className="code-block">
   <CodeBlock mixinName={`grid`}>
-    #grid.column(responsive, 6, 4);
+    #grid.column(responsive, 2, 4);
+  </CodeBlock>
+
+  <GridItem index={`07`} />
+</div>
+
+## Grid Row
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.row(@type, @start, @end);
   </CodeBlock>
 </div>
 
 <div className={`code-block__description`}>
-  Useful mixin to change both Grid column and row gaps at the same time.
-  Both column and row gaps must have the same value.
+  We can also specify the row start / row end like this:
+  Default will start at row 1 and end at row 2
 </div>
 
 <div className="code-block">
   <CodeBlock mixinName={`grid`}>
-    #grid.gap(20px);
+    #grid.row();
   </CodeBlock>
+
+  <GridItem index={`08`} />
+</div>
+
+<div className={`code-block__description`}>
+  To set the desired start and end values, pass them in as parameters.
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.row(1, 3);
+  </CodeBlock>
+
+  <GridItem index={`09`} />
+</div>
+
+<div className={`code-block__description`}>
+  To span rows use the span parameter. By default it will start at row 1 
+  and span 2 rows.
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.row(span);
+  </CodeBlock>
+
+  <GridItem index={`10`} />
+</div>
+
+<div className={`code-block__description`}>
+  To set desired span values pass in the start row and the amount of rows to span as 
+  parameters. This example starts at row 2 and spans 2 rows
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.row(span, 2, 2);
+  </CodeBlock>
+
+  <GridItem index={`11`} />
+</div>
+
+<div className={`code-block__description`}>
+  To set the grid item to span from the first row to the last row use the vertical
+  parameter.
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`grid`}>
+    #grid.row(vertical);
+  </CodeBlock>
+
+  <GridItem index={`12`} />
 </div>

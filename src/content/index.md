@@ -45,6 +45,12 @@ In general, when mixins are used in a certain way, they could add a lot of addit
    
 ## But why not use a framework like Bootstrap?
 
-Frameworks like Bootstrap and Tailwind are great and may be a better choice for your
-project. This mixin library works best with a BEM style framework where you are more
-in control with naming classes how you want to name them, and adding styles to your classes, instead of adding pre-defined classes to your html.
+Frameworks like Bootstrap and Tailwind are great and may be a better choice for your project. Bare in mind those frameworks may have a lot of CSS in the stylesheet
+which you may not be using or may not need for your project.
+
+This mixin library works best with a BEM style framework where you are more in control with naming classes how you want to name them, and adding styles to your classes, instead of adding pre-defined classes to your html. This method also allows you to be more in control of what styles are compiled in your stylesheet so
+you can keep it as compact as possible.
+
+## Tip
+
+To speed up workflow it is a great idea to ensure you have a hot reload and watch tool set up in your project for development. Some frameworks like Gatsby have it built in. Depeneding on the project setup you can use Webpack and Recat hot loader or Gulp with Browsesync and HTML injection plugin. The ideal workflow is **make change** > **save** > **view change in browser**.  
