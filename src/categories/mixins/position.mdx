@@ -6,101 +6,88 @@ description: Designed to easily write position rules
 ---
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
+import Position from '../../components/position/position';
 
-Position mixins follow the following naming pattern:
+<div className={`code-block__description`}>
+  Position mixins follow the following naming pattern:
+</div>
 
-<CodeBlock mixinName={`position`}>
-  #position.position-type(position, vertical value, horizontal value);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`position`}>
+    #position.position-type(@position, @x-value, @y-value);
+  </CodeBlock>
+</div>
 
-* The supported *position-type* options are: **absolute**, **relative** and **fixed**
-* The *position* parameter options are **top-left**, **bottom-left**, **top-right**, **bottom-right** and **all**
+* The supported *position-type* options are: 
+  * **absolute**
+  * **relative** 
+  * **fixed**
+  
+* The *position* parameter options are
+  * **top-left**
+  * **bottom-left**
+  * **top-right**
+  * **bottom-right** 
+  
 * All *position* values default to **0**.
 
-## Examples:
+## Absolute
 
-<CodeBlock mixinName={`position`}>
-  #position.absolute(top-left);
-</CodeBlock>
+<div className={`code-block__description`}>
+  In the following examples the parent element is set with relative positioning
+  and the child purple div has the position mixin applied so it will be positioned
+  within the grey bordered wrapper. All position mixins require the first parameter.
+</div>
 
-The single line of code above outputs the following 3 lines of CSS:
+<div className="code-block">
+  <CodeBlock mixinName={`position`}>
+    #position.absolute(top-left);
+  </CodeBlock>
 
-<CodeBlock mixinName={`position`}>
-  position: absolute;
-  top: 0;    
-  left: 0;
-</CodeBlock>
+  <Position index={`01`} />
+</div>
 
-This mixin can easily be modified:
+<div className={`code-block__description`}>
+  To set desired values pass in the postion values. In the next example, absolute positioning
+  is set on the element with the bottom value as 10px and right value as 5px.
+</div>
 
-<CodeBlock mixinName={`position`}>
-  #position.absolute(bottom-right, 10px, 5px);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`position`}>
+    #position.absolute(bottom-right, 10px, 5px);
+  </CodeBlock>
 
-Which will output the following CSS:
+  <Position index={`02`} />
+</div>
 
-<CodeBlock mixinName={`position`}>
-  position: absolute;
-  bottom: 10px;
-  right: 5px;                           
-</CodeBlock>
+## Relative
 
-If you need to specify all positions you can use the following:
+<div className={`code-block__description`}>
+  The next example shows how to set relative positioning with a top value of 10px and 
+  right value of -50px.
+</div>
 
-<CodeBlock mixinName={`position`}>
-  #position.absolute(all);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`position`}>
+    #position.relative(top-right, 10px, -50px);
+  </CodeBlock>
 
-Which will output the following CSS:
+  <Position index={`03`} />
+</div>
 
-<CodeBlock mixinName={`position`}>
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-</CodeBlock>
+<div className={`code-block__description`}>
+  This example shows a fixed positioning example, however as fixed positioning is calculated 
+  from the body element so there is no visual example here as if there was a small square purple
+  div would ppear at the top left of the screen and would look out of place. In general fixed 
+  positioning is only used for elements that need to be fixed to the screen, like menu bars 
+  for example. 
+</div>
 
-You can change any of the position values if needed:
+## Fixed
 
-<CodeBlock mixinName={`position`}>
-  #position.absolute(all, 10px, 2rem, 5%, 1em);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`position`}>
+    #position.fixed(top-left, 20px, 50px);
+  </CodeBlock>
+</div>
 
-Which will output the following CSS:
-
-<CodeBlock mixinName={`position`}>
-  position: absolute;
-  top: 10px;
-  right: 2rem;
-  bottom: 5%;
-  left: 1em;
-</CodeBlock>
-
-Relative positioning is supported:
-
-<CodeBlock mixinName={`position`}>
-  #position.relative(top-right, 0, 50%);
-</CodeBlock>
-
-Which will output the following CSS:
-
-<CodeBlock mixinName={`position`}>
-  position: relative;  
-  top: 0;  
-  right: 50%;  
-</CodeBlock>
-
-Fixed positioning is supported:
-
-<CodeBlock mixinName={`position`}>
-  #position.fixed(top-left, -20px, 100%);
-</CodeBlock>
-
-Which will output the following CSS:
-
-<CodeBlock mixinName={`position`}>
-  position: fixed;  
-  top: -20px;  
-  left: 100%;  
-</CodeBlock>

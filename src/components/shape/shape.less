@@ -1,0 +1,40 @@
+.shape {
+
+  &-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    #display.flex(start);
+  }
+
+  &--01 {
+    #shape.arrow(left, 50px, @color[primary]);
+  }
+
+  &--02 {
+    #shape.arrow(up, 50px, @cyan);
+  }
+
+  &--03 {
+    #shape.arrow(right, 50px, @mexican-red);
+  }
+
+  &--04 {
+    #shape.arrow(down, 50px, @plum);
+  }
+
+  &--05 {
+    #shape.round();
+  }
+
+  &--06 {
+    #shape.round(1rem, 120px, @steel-blue);
+  }
+
+  &--07 {
+    #shape.square();
+  }
+
+  &--08 {
+    #shape.square(rounded);
+  }
+}

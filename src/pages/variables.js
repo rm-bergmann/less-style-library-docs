@@ -38,7 +38,10 @@ const VariablesPage = ({ data }) => {
       <section className={`layout__description`}>
         <h1>Variables</h1>
         <p>This library includes variables ready to use for color names and
-          breakpoints for Media queries.
+          breakpoints for Media queries. In Less, variables are declared with the
+          @ symbol. Less also supports grouping of variables in an object-like
+          structure which this library makes use of in the settings and color
+          settings variables.
         </p>
       </section>
       <aside className={`layout__side`} />

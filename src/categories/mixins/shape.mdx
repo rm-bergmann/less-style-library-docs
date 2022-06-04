@@ -6,77 +6,101 @@ description: Mixins to style elements as shapes
 ---
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
+import Shape from '../../components/shape/shape';
 
-### Shapes follow the following pattern:
+<div className={`code-block__description`}>
+  Shape mixins are constructed based on the following pattern:
+</div>
 
-<CodeBlock mixinName={`shape`}>
-  #shape.shape-type(direction, size, color);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.shape-type(@direction, @size, @color);
+  </CodeBlock>
+</div>
 
-* Shape-type mixins currently supported are: **arrow**, **round** and **square**
+* Shape-type mixins currently supported are: 
+  * **arrow**
+  * **round** 
+  * **square**
 * Direction supports the following values (arrow shapes only) **up**, **down**, **left** or **right**
 * Size (width and height as 1 value) in px, em, rem etc
 * Color
 
-<div className="shape--container">
-  <div className="shape--arrow---left" />
+## Arrow
+
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.arrow(left, 50px, @color[primary]);
+  </CodeBlock>
+
+  <Shape index={`01`} />
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #shape.arrow(left, 50px, @color-01);
-</CodeBlock>
 
-<div className="shape--container">
-  <div className="shape--arrow---up-cyan" />
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.arrow(up, 50px, @cyan);
+  </CodeBlock>
+
+  <Shape index={`02`} />
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #shape.arrow(up, 50px, @cyan);
-</CodeBlock>
 
-<div className="shape--container">
-  <div className="shape--arrow---right-red" />
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.arrow(right, 50px, @red);
+  </CodeBlock>
+
+  <Shape index={`03`} />
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #shape.arrow(right, 50px, @red);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.arrow(down, 50px, @purple);
+  </CodeBlock>
 
-<div className="shape--container">
-  <div className="shape--arrow---down-purple" />
+  <Shape index={`04`} />
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #shape.arrow(down, 50px, @purple);
-</CodeBlock>
+## Round
 
-For round shapes you can pass in padding, width and height (as the same value) and background-color.
-
-<div className="shape--container">
-  <div className="shape--round" />
+<div className={`code-block__description`}>
+  For round shapes you can pass in padding, width and height (as the same value) and background-color.
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #shape.round();
-</CodeBlock>
-
-<div className="shape--container">
-  <div className="shape--round---blue" />
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.round();
+  </CodeBlock>
+  
+  <Shape index={`05`} />
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #shape.round(1rem, 100px, @blue);
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.round(1rem, 100px, @blue);
+  </CodeBlock>
 
-<div className="shape--container">
-  <div className="shape--square" />
+  <Shape index={`06`} />
 </div>
 
-<CodeBlock mixinName={`shape`}>
-  #shape.square();
-</CodeBlock>
+## Square
 
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.square();
+  </CodeBlock>
 
+  <Shape index={`07`} />
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.square(rounded);
+  </CodeBlock>
+
+  <Shape index={`08`} />
+</div>
  
  
 

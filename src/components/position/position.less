@@ -1,0 +1,28 @@
+.position {
+  background-color: @color[secondary];
+  #display.dimensions(equal, 40px);
+  #border.radius();
+
+  &-wrapper {
+    padding: 10px;
+    background-color: @color[graylight];
+    margin-left: auto;
+    position: relative;
+    #border.solid(2px, @color[primary]);
+    #border.radius();
+    #display.dimensions(200px, 80px);
+  }
+
+  &--01 {
+    #position.absolute(top-left);
+  }
+
+  &--02 {
+    #position.absolute(bottom-right, 10px, 5px);
+  }
+
+  &--03 {
+    #position.relative(top-right, 10px, -50px);
+  }
+
+}
