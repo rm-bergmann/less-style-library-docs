@@ -9,46 +9,62 @@ import CodeBlock from '../../components/codeBlock/codeBlock';
 import Shape from '../../components/shape/shape';
 
 <div className={`code-block__description`}>
-  Shape mixins are constructed based on the following pattern:
+  Shape mixins currently supports 4 configurable shape types, and 
+  are designed to have the bare minimum styles to display an element
+  as a shape. If the element has any child elements or text inside 
+  you may have to add additional styles to adjust the presentation
+  of the child elements or text to taste.  
 </div>
+
+* **arrow**
+* **round** 
+* **square**
+* **rectangle**
+
+## Arrow Shape
 
 <div className="code-block">
   <CodeBlock mixinName={`shape`}>
-    #shape.shape-type(@direction, @size, @color);
+    #shape.arrow(@direction, @size, @color);
   </CodeBlock>
 </div>
 
-* Shape-type mixins currently supported are: 
-  * **arrow**
-  * **round** 
-  * **square**
-* Direction supports the following values (arrow shapes only) **up**, **down**, **left** or **right**
-* Size (width and height as 1 value) in px, em, rem etc
-* Color
+<div className={`code-block__description`}>
+  Arrow shapes take in 3 parameters: 
+</div>
 
-## Arrow
+* **@direction** *(required)*
+* **@size**
+* **@color**
 
 <div className="code-block">
   <CodeBlock mixinName={`shape`}>
-    #shape.arrow(left, 50px, @color[primary]);
+    #shape.arrow(right);
   </CodeBlock>
 
   <Shape index={`01`} />
 </div>
 
+<div className={`code-block__description`}>
+  By default the size is set to 1rem and the colour is set to the 
+  @color[primary] setting. To change the size pass in a size value:
+</div>
 
 <div className="code-block">
   <CodeBlock mixinName={`shape`}>
-    #shape.arrow(up, 50px, @cyan);
+    #shape.arrow(left, 40px);
   </CodeBlock>
 
   <Shape index={`02`} />
 </div>
 
+<div className={`code-block__description`}>
+  To change the color (background-color), pass in a color as a 3rd parameter:
+</div>
 
 <div className="code-block">
   <CodeBlock mixinName={`shape`}>
-    #shape.arrow(right, 50px, @red);
+    #shape.arrow(up, 2.5rem, @ocean-green);
   </CodeBlock>
 
   <Shape index={`03`} />
@@ -56,13 +72,21 @@ import Shape from '../../components/shape/shape';
 
 <div className="code-block">
   <CodeBlock mixinName={`shape`}>
-    #shape.arrow(down, 50px, @purple);
+    #shape.arrow(down, 50px, @ocean-green);
   </CodeBlock>
 
   <Shape index={`04`} />
 </div>
 
-## Round
+<hr />
+
+## Round Shape
+
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.round(@size, @color);
+  </CodeBlock>
+</div>
 
 <div className={`code-block__description`}>
   For round shapes you can pass in padding, width and height (as the same value) and background-color.
@@ -78,13 +102,27 @@ import Shape from '../../components/shape/shape';
 
 <div className="code-block">
   <CodeBlock mixinName={`shape`}>
-    #shape.round(1rem, 100px, @blue);
+    #shape.round(1rem, @orange);
   </CodeBlock>
 
   <Shape index={`06`} />
 </div>
 
-## Square
+<hr />
+
+## Square Shape
+
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.square(@type, @size, @background);
+  </CodeBlock>
+</div>
+
+<div className={`code-block__description`}>
+  Square shapes take 3 parameters. By default, the size is set
+  to 100px and the background color defaults to the @color[primary]
+  setting.
+</div>
 
 <div className="code-block">
   <CodeBlock mixinName={`shape`}>
@@ -94,13 +132,98 @@ import Shape from '../../components/shape/shape';
   <Shape index={`07`} />
 </div>
 
+<div className={`code-block__description`}>
+  For rounded edgeds you can pass in the 'rounded' type as the 
+  first parameter. You can also add a custom size and background 
+  color.
+</div>
+
 <div className="code-block">
   <CodeBlock mixinName={`shape`}>
-    #shape.square(rounded);
+    #shape.square(rounded, 70px, @color[secondary]);
   </CodeBlock>
 
   <Shape index={`08`} />
 </div>
- 
- 
 
+<div className={`code-block__description`}>
+  To adjust the border radius, pass in a custom value as the 4th
+  parameter.
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.square(rounded, 70px, @color[secondary], 10px);
+  </CodeBlock>
+
+  <Shape index={`09`} />
+</div>
+
+<hr />
+
+## Rectangle Shape
+
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.rectangle(@type, @size, @background);
+  </CodeBlock>
+</div>
+
+<div className={`code-block__description`}>
+  Similar to the square shape mixin, rectangle shapes take in
+  the same parameters of type, size and background color. The 
+  difference between the 2 is that the size of the square shape is 
+  an equal width and height value, and the rectangle divides the 
+  given size (width) value by 3 to caluclate the height value. 
+</div>
+ 
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.rectangle();
+  </CodeBlock>
+
+  <Shape index={`10`} />
+</div>
+
+<div className={`code-block__description`}>
+  By default, the rectangle shape will have a size value of 100px,
+  therefore the width will be 100px and height will be 33.333333px,
+  and the background color will default to the @color[primary] 
+  setting. You can change the size by specifying a size value and 
+  change the backgound color by passing it in as a parameter. 
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.rectangle(200px, @crimson);
+  </CodeBlock>
+
+  <Shape index={`11`} />
+</div>
+
+<div className={`code-block__description`}>
+  For rounded edges, pass in 'rounded' as the first parameter. The 
+  border radius value is set to the @settings[radius] value, which
+  in this case is set to 4px.
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.rectangle(rounded, 150px, @violet);
+  </CodeBlock>
+
+  <Shape index={`12`} />
+</div>
+
+<div className={`code-block__description`}>
+  To adjust the border radius, pass in a custom value as the 4th
+  parameter.
+</div>
+
+<div className="code-block">
+  <CodeBlock mixinName={`shape`}>
+    #shape.rectangle(rounded, 150px, @violet, 20px);
+  </CodeBlock>
+
+  <Shape index={`13`} />
+</div>

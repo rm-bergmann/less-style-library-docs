@@ -10,6 +10,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-left: 0;
 
       &-item {
         list-style: none;
@@ -32,11 +33,15 @@
       display: block;
     }
 
-    .menu__list-item {
-      list-style: none;
+    .menu__list {
+      margin-left: 0;
 
-      &-link {
-        .block-link-style();
+      &-item {
+        list-style: none;
+
+        &-link {
+          .block-link-style();
+        }
       }
     }
   }

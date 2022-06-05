@@ -7,19 +7,19 @@
   }
 
   &--01 {
-    #shape.arrow(left, 50px, @color[primary]);
+    #shape.arrow(right);
   }
 
   &--02 {
-    #shape.arrow(up, 50px, @cyan);
+    #shape.arrow(left, 40px);
   }
 
   &--03 {
-    #shape.arrow(right, 50px, @mexican-red);
+    #shape.arrow(up, 2.5rem, @ocean-green);
   }
 
   &--04 {
-    #shape.arrow(down, 50px, @plum);
+    #shape.arrow(down, 2.5rem, @ocean-green);
   }
 
   &--05 {
@@ -27,7 +27,7 @@
   }
 
   &--06 {
-    #shape.round(1rem, 120px, @steel-blue);
+    #shape.round(80px, @orange);
   }
 
   &--07 {
@@ -35,6 +35,26 @@
   }
 
   &--08 {
-    #shape.square(rounded);
+    #shape.square(rounded, 70px, @color[secondary]);
+  }
+
+  &--09 {
+    #shape.square(rounded, 70px, @color[secondary], 10px);
+  }
+
+  &--10 {
+    #shape.rectangle();
+  }
+
+  &--11 {
+    #shape.rectangle(200px, @crimson);
+  }
+
+  &--12 {
+    #shape.rectangle(rounded, 150px, @violet);
+  }
+
+  &--13 {
+    #shape.rectangle(rounded, 150px, @violet, 20px);
   }
 }
