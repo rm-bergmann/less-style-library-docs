@@ -7,15 +7,19 @@ description: Vieport breakpoint variables
 
 import CodeBlock from '../../components/codeBlock/codeBlock';
 
-Common device screen sizes are set up as variables to make it easier and
-faster to write media queries. The variables follow a specific pattern
-to make the variables easy to remember.
+<div className={`code-block__description`}>
+  Common device screen sizes are set up as variables to make it easier and
+  faster to write media queries. The variables follow a specific pattern
+  to make the variables easy to remember.
+</div>
 
-Breakpoint variables are constructed based on teh following pattern:
+Breakpoint variables are constructed based on the following pattern:
 
-<CodeBlock mixinName={`breakpoints`}>
-  @media @[device]-[size]-[min/max]
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`breakpoints`}>
+    @media @[device]-[size]-[min/max]
+  </CodeBlock>
+</div>
 
 ## Device Options:
 * mobile
@@ -29,33 +33,52 @@ Breakpoint variables are constructed based on teh following pattern:
 
 ### Examples:
 
-For example, you can write media queries using these variables. To target a screen width of 319px and below: 
+<div className={`code-block__description`}>
+  To target a screen width of 319px and below: 
+</div>
 
-<CodeBlock mixinName={`breakpoints`}>
-  @media @mobile-small-max
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`breakpoints`}>
+    @media @mobile-small-max
+  </CodeBlock>
+</div>
 
-Which will output the following CSS:
+<div className={`code-block__description`}>
+  Which will output the following CSS:
+</div>
 
-<CodeBlock mixinName={`breakpoints`}>
-  @media only screen and (max-width: 319px)
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`breakpoints`}>
+    @media only screen and (max-width: 319px)
+  </CodeBlock>
+</div>
 
-Or target a viewport width of 1280px and above:  
+<div className={`code-block__description`}>
+  To target a viewport width of 1280px and above: 
+</div> 
 
-<CodeBlock mixinName={`breakpoints`}>
-  @media @desktop-large-min
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`breakpoints`}>
+    @media @desktop-large-min
+  </CodeBlock>
+</div>
 
-Which will output the following CSS:
+<div className={`code-block__description`}>
+  Which will output the following CSS:
+</div>
 
-<CodeBlock mixinName={`breakpoints`}>
-  @media only screen and (min-width: 1280px)
-</CodeBlock>
+<div className="code-block">
+  <CodeBlock mixinName={`breakpoints`}>
+    @media only screen and (min-width: 1280px)
+  </CodeBlock>
+</div>
 
-To target mobile devices with a screensize less than 320px wide you can
-write the following:
+<div className={`code-block__description`}>
+  To target mobile devices with a screensize less than 320px wide you can
+  write the following:
+</div>
 
+<hr />
 
 ## Complete list of defined media query variables:
 

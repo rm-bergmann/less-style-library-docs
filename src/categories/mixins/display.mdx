@@ -22,7 +22,7 @@ import CodeBlock from '../../components/codeBlock/codeBlock';
 * tablet
 * desktop
 
-## Display Flex:
+## Flex:
 
 <div className={`code-block__description`}>
   Flex displays should be applied to the flexbox parent element. 
@@ -93,7 +93,7 @@ import CodeBlock from '../../components/codeBlock/codeBlock';
 </div>
 
 <div className={`code-block__description`}>
-  For a Grid like flexbox (works well for IE 11 as a flexbox fallback):
+  For a Grid like flexbox (works well for IE 11 as a flexbox fallback)
 </div>
 
 <div className="code-block">
@@ -115,7 +115,7 @@ import CodeBlock from '../../components/codeBlock/codeBlock';
 
 <hr />
 
-## Display Grid
+## Grid
 ### Apply these mixins to the grid parent element 
 
 <div className="code-block">
@@ -192,7 +192,7 @@ import CodeBlock from '../../components/codeBlock/codeBlock';
 
 <hr />
 
-## Display Colors
+## Colors
 
 <div className="code-block">
   <CodeBlock>
@@ -230,30 +230,30 @@ import CodeBlock from '../../components/codeBlock/codeBlock';
 
 <hr />
 
-## Display Dimensions
+## Dimensions
+<div className="code-block">
+  <CodeBlock>
+    #display.dimensions(@type, @width, @height);
+  </CodeBlock>
+</div>
+
+<div className={`code-block__description`}>
+  Use this mixin to add width and height values to elements. 
+  The type parameter is optional, by default width is set to 100px and height
+  is set to auto.
+</div>
 
 <div className="code-block">
   <CodeBlock>
-    #display.dimensions(@width, @height);
+    #display.dimensions();
   </CodeBlock>
 
   <div className="display display-secondary display--10" />
 </div>
 
 <div className={`code-block__description`}>
-  Width and height values are regularly added to elements. Use this mixin to set a 
-  width and height to an element. The default values are:
-  <p>&nbsp;</p>
-  
-  <CodeBlock>
-    {`width: 100px;
-height: 100px;`}
-  </CodeBlock>
-</div>
-
-<div className={`code-block__description`}>
-  To customize pass in the desired width value as the first paramater and height
-  value as the second parameter. 
+  To customize the values, pass in the desired width value as the first paramater 
+  and height value as the second parameter. 
 </div>
 
 <div className="code-block">
@@ -277,13 +277,35 @@ height: 100px;`}
   <div className="display display-secondary display--12" />
 </div>
 
-## Display Width
+<hr />
+
+## Width
+
+<div className={`code-block__description`}>
+  Width displays can be used when you need a width, min-width and 
+  max-width. By default width is set to auto, min-width is set to 
+  auto and max-width is set to 100%.
+</div>
 
 <div className="code-block">
   <CodeBlock>
-    #display.width(@min, @max);
+    #display.width(@width, @min, @max);
   </CodeBlock>
 </div>
+
+<div className={`code-block__description`}>
+  To set a min-width and max-width only, use the minmax type as 
+  the first parameter. Min and Max values are the same as the 
+  default mixin.
+</div>
+
+<div className="code-block">
+  <CodeBlock>
+    #display.width(minmax, @min, @max);
+  </CodeBlock>
+</div>
+
+<hr />
 
 ## Clearfix
 
@@ -303,18 +325,18 @@ height: 100px;`}
   </div>
 </div>
 
+<hr />
+
 ## Space
 
 <div className="code-block">
   <CodeBlock>
-    #display.space(@margin, @padding);
+    #display.space(@type, @margin, @padding);
   </CodeBlock>
 </div>
 
 <div className={`code-block__description`}>
-  It is common to zero out margin and padding from elements, this mixin is a 1 liner 
-  to do the job. Currently, the 0 values cannot be adjusted, but it is likely in an 
-  future version there will be a new mixin to handle margin and padding values.
+  By default, this mixin sets margin and padding to 0.
 </div>
 
 <div className="code-block">
@@ -322,6 +344,43 @@ height: 100px;`}
     #display.space();
   </CodeBlock>
 </div>
+
+<div className={`code-block__description`}>
+  To adjust the values, pass in a margin as the first parameter and padding as 
+  the second parameter. In the example below, margin is set to 10px, and padding 
+  is set to 1rem.
+</div>
+
+<div className="code-block">
+  <CodeBlock>
+    #display.space(10px, 1rem);
+  </CodeBlock>
+</div>
+
+<div className={`code-block__description`}>
+  When both margin and padding values should be set to 0, you can pass in 0 as the
+  only parameter. Note this is teh same as the default settings but just slightly 
+  more readable. 
+</div>
+
+<div className="code-block">
+  <CodeBlock>
+    #display.space(0);
+  </CodeBlock>
+</div>
+
+<div className={`code-block__description`}>
+  When margin and padding have the same values, use the 'equal' type as the first 
+  parameter, and pass in a value (defaults to 0). 
+</div>
+
+<div className="code-block">
+  <CodeBlock>
+    #display.space(equal, 1rem);
+  </CodeBlock>
+</div>
+
+<hr />
 
 ## Pseudo Element
 
@@ -359,7 +418,7 @@ content: '';`}
   <div className="display display--14"><span>Some Text</span></div>
 </div>
 
-<br />
+<hr />
 
 ## Viewport Display
 

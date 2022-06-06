@@ -1,29 +1,36 @@
 footer {
   // grid-area: footer;
   display: flex;
-  // background-color: darken(@color[primary], 15%);
   #gradient.linear(@color[primary], darken(@color[primary], 5%));
-  height: 180px;
+  padding-top: 1rem;
 }
 
 .footer-content {
   .footer-text-color();
   width: 100%;
   font-size: 1rem;
-  margin: 2rem auto;
+  margin: 0 auto;
+  padding: 1.5rem 0 0 0;
   text-align: center;
 
   a {
     margin-left: 5px;
     font-size: 1rem;
+    text-decoration: none;
     .footer-text-color();
 
     &:hover {
       color: white;
     }
   }
+
+  &-disclaimer {
+    padding: 1rem 0;
+    background-color: @color[graydark];
+    border-top: 1px solid white;
+  }
 }
 
 .footer-text-color() {
-  color: lighten(@color[primary], 30%);
+  color: white;
 }

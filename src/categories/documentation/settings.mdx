@@ -8,21 +8,11 @@ description: Default Settings
 import CodeBlock from '../../components/codeBlock/codeBlock';
 
 <div className={`code-block__description`}>
-  This library includes default settings which are grouped into a single variable 
-  and can be overridden in your application. 
-  <p>&nbsp;</p>
-  The current avaialable settings are:
-
-  <CodeBlock>
-    {`Border Radius
-Primary Font
-Secondary Font`}
-  </CodeBlock>
-</div>
-
-<div className={`code-block__description`}>
-  The default settings values are exactly as rendered in this documenattion 
-  website.
+  This library includes default settings which are grouped into a single 
+  variable and can be overridden in your application. To override the default
+  settings, copy and paste the settings and color variables and add them to a 
+  less file in your application. The default settings values are exactly as 
+  rendered in this documenattion website.
 </div>
 
 <div className="code-block">
@@ -45,6 +35,14 @@ Secondary Font`}
     {`@colors {
   primary: @elephant;
   secondary: @fresh-eggplant;
+  contrast: @pippin;
+  pale: @linen;
+  graylight: @alto;
+  graymedium: @silver-chalice;
+  graydark: @tuna;
+  success: @forest-green;
+  warning: @amber;
+  error: @vermilion;
 }`}
   </CodeBlock>
 </div>

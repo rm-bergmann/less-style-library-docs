@@ -23,10 +23,12 @@ const Footer = () => {
             NPM Package
           </a>
         </p>
-        <small>
-          &copy;
-          {` Copyright ${currentDate.getFullYear()} rickbergmann.com`}
-        </small>
+        <div className={`footer-content-disclaimer`}>
+          <small>
+            &copy;
+            {` Copyright ${currentDate.getFullYear()} rickbergmann.com`}
+          </small>
+        </div>
       </div>
     </footer>
   );
