@@ -8,15 +8,21 @@ const MenuItem = ({ menuItems }) => {
   const activeClassName = `${linkClassName}--active`;
   const menuItemValues = Object.values(menuItems);
 
-  let partiallyActive = ({ partiallyCurrent }) =>
-    partiallyCurrent ? true : false;
+  
+  // const partiallyActive = className => ({ isPartiallyCurrent }) => ({
+  //   className: className + (isPartiallyCurrent ? activeClassName : ``),
+  // })
+
 
   const renderLinks = menuItemValues.map(menuItem => {
-    const { linkText, linkRoute } = menuItem;
+    const { linkText, linkRoute, partiallyActive } = menuItem;
 
     // if (linkText === 'About' && (window.location.pathname.indexOf('mixins') === 1)) {
     //   partiallyActive = false;
     // }
+
+
+    // let partiallyActive = ({ partiallyCurrent }) => linkRoute === '/' ? false : true;
 
     return (
       <li key={linkText} className={itemClassName}>

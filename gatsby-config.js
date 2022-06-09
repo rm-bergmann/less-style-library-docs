@@ -51,7 +51,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "documentation",
-        path: "./src/categories/documentation",
+        path: "./src/categories/about",
       },
     },
     {

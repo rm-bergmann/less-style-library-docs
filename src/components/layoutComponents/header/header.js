@@ -6,14 +6,17 @@ const mainLinks = {
   "about": {
     "linkText": "About",
     "linkRoute": "/",
+    "partiallyActive": false,
   },
   "mixins": {
     "linkText": "Mixins",
     "linkRoute": "/mixins",
+    "partiallyActive": true,
   },
   "variables": {
     "linkText": "Variables",
     "linkRoute": "/variables",
+    "partiallyActive": true,
   }
 };
 
