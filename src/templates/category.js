@@ -2,7 +2,7 @@ import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Menu from '../components/layoutComponents/menu/menu';
 
-export default function mixin({ pageContext: { node, aboutLinks, mixinLinks, variablesLinks } }) {
+export default function mixin({ pageContext: { node, documentationLinks, mixinLinks, variablesLinks } }) {
   const { frontmatter, body } = node;
   const { title, description, category } = frontmatter;
 
@@ -17,8 +17,8 @@ export default function mixin({ pageContext: { node, aboutLinks, mixinLinks, var
       renderLinks = variablesLinks;
       break;
 
-    case 'about':
-      renderLinks = aboutLinks;
+    case 'documentation':
+      renderLinks = documentationLinks;
       break;
 
     default:

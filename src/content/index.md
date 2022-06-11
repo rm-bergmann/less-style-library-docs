@@ -6,7 +6,7 @@ This library also includes variables for colour names and media queries
 
 ## This is a useful tool if:
 
-* You like designing in the browser
+* You like designing web pages or components using CSS instead of design software
 * You like writing CSS in Less
 * You like changing multiple values at once
 * You like identifying where common style patterns are used in your code
@@ -20,7 +20,7 @@ This library also includes variables for colour names and media queries
 Less is a declaritive language which extends CSS.
 
 
-[This article](1) explains more about the details on how Less compares to other preprocessors such as Sass, however the main inspiration for writing this library is the way Mixins are declared in Less, which allows to declare namespaced mixins using simple CSS like syntax (eg, the *#* and *.* characters which represent ID and class)
+[This article](1) explains more about the details on how Less compares to other preprocessors such as Sass, however the main inspiration for writing this library is the way Mixins are declared in Less. Less allows to declare namespaced mixins using simple CSS like syntax (eg, the *#* and *.* characters which represent ID and class)
 
 [1]: https://medium.com/@matthewdeaners/less-the-world-s-most-misunderstood-css-pre-processor-76273881cb03
 
@@ -36,7 +36,7 @@ A new style of code to learn... Like we don't have enough already!
 ***Inconsistencies in the css syntax***  
 Mixins do make the syntax inconsistent but that could be used as an advantage because it's easy to identify where they are used in the code, and they are searchable.
 
-***Additional maintennace when Library updates***  
+***Additional maintenance when Library updates***  
 Updates and improvements could break exisiting code and therefore error on the next compile. If there are errors you will need to check the changelog in github and then update the mixins if they have chaged in any way.
 
 ***Mixins can add additional unnecceary size to yours stylesheets***  

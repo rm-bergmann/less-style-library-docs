@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Menu from '../menu/menu';
 
+let partiallyActive = false;
+
 const mainLinks = {
   "about": {
     "linkText": "About",
     "linkRoute": "/",
-    "partiallyActive": false,
+    "partiallyActive": partiallyActive,
   },
   "mixins": {
     "linkText": "Mixins",

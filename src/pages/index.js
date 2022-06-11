@@ -21,24 +21,24 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
 
-  const allAboutLinks = data.allMdx.nodes;
-  let aboutLinks = {};
+  const allDocumentationLinks = data.allMdx.nodes;
+  let documentationLinks = {};
 
-  allAboutLinks.map(documentationLink => {
+  allDocumentationLinks.map(documentationLink => {
     const { title, slug, category } = documentationLink.frontmatter;
 
-    if (category === 'about') {
-      aboutLinks[title] = {
+    if (category === 'documentation') {
+      documentationLinks[title] = {
         "linkText": title,
-        "linkRoute": `/about/${slug}`,
+        "linkRoute": `/documentation/${slug}`,
       }
     }
-    return aboutLinks;
+    return documentationLinks;
   });
 
   return (
     <>
-      <Menu menuType={`sub`} menuItems={aboutLinks} />
+      <Menu menuType={`sub`} menuItems={documentationLinks} />
       <div className={`about-container`}>
         <Index />
       </div>
