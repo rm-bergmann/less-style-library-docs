@@ -25,12 +25,12 @@
   &--sub {
     display: none;
     background: @mystic;
-    min-height: 50vh;
     padding: 0 6px 0 4px;
-    #border.solid(top, 4px, white);
+    display: block;
 
-    @media @tablet-small-min {
-      display: block;
+    @media @tablet-large-min {
+      min-height: 50vh;
+      #border.solid(top, 4px, white);
     }
 
     .menu__list {

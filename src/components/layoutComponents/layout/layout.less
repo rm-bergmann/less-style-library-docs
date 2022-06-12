@@ -3,7 +3,19 @@
   &__content {
     min-height: 50vh;
     display: grid;
-    grid-template-columns: 240px 1fr 240px;
+    grid-template-columns:1fr;
+
+    @media @tablet-large-min {
+      grid-template-columns: 240px 1fr;
+    }
+
+    @media @laptop-small-min {
+      grid-template-columns: 200px 1fr 160px;
+    }
+
+    @media @laptop-large-min {
+      grid-template-columns: 240px 1fr 240px;
+    }
   }
 
   .about-container {
