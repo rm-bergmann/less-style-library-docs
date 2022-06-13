@@ -53,4 +53,4 @@ you can keep it as compact as possible.
 
 ## Tip
 
-To speed up workflow it is a great idea to ensure you have a hot reload and watch tool set up in your project for development. Some frameworks like Gatsby have it built in. Depeneding on the project setup you can use Webpack and Recat hot loader or Gulp with Browsesync and HTML injection plugin. The ideal workflow is **make change** > **save** > **view change in browser**.  
+To speed up workflow it is a great idea to ensure you have a hot reload and watch tool set up in your project for development. Some frameworks like Gatsby have it built in. Depending on the project setup you can use Webpack and React hot loader or Gulp with Browsesync and HTML injection plugin. The ideal workflow is **make change** > **save** > **view change in browser**.  
